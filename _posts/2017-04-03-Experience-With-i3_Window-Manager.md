@@ -1,0 +1,4 @@
+---
+title: Experience With i3 Window Manager
+---
+Here's my newly customised Ubuntu 14.04 LTS. I have been using i3-wm for the past one month and going smooth as in real smooth. If you haven't tried this one of window manager I'd say you must. With just a terminal running, the environment is taking up a mere 100MB of memory; Since it's a window manager and not a full desktop environment, it's also taking up less of the processor. On first boot, this's noticeable. Since i3 is focused on efficiency, most tasks can be accomplished on i3 without using a cursor at all. It relies on a series of keyboard shortcuts. For me, it's taken about an hour of consistent use to feel like I can practically apply the shortcuts. Once you have mastered the basics, definitely you'd stick on to this like I did, though I will keep GNOME around for when I need to show off how beautiful Linux can be to those I'm trying to convert.

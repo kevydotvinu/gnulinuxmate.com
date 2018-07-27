@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-27T14:52:38+05:30</updated><id>http://localhost:4000/</id><title>linuxmate</title><subtitle>A typical Linux blog</subtitle><entry><title>Oracle Database Appliance Deployment</title><link href="http://localhost:4000/Oracle-Database-Appliance-Deployment/" rel="alternate" type="text/html" title="Oracle Database Appliance Deployment" /><published>2018-02-15T00:00:00+05:30</published><updated>2018-02-15T00:00:00+05:30</updated><id>http://localhost:4000/Oracle-Database-Appliance-Deployment</id><content type="html" xml:base="http://localhost:4000/Oracle-Database-Appliance-Deployment/">&lt;h3 id=&quot;intoduction&quot;&gt;Intoduction&lt;/h3&gt;
+&lt;p&gt;Oracle Database Appliance or ODA is an Oracle Engineered System that is simple to deploy and optimized. Here, we have, ODA X6-2S. It is designed for customers requiring only single instance databases. The deployment shall take not more than around 35 minutes. This post includes full how-to-deploy video which is more than enough for the complete deployment knowledge.&lt;/p&gt;
+
+&lt;h3 id=&quot;preparing-to-deploy-oracle-database-appliance&quot;&gt;Preparing to deploy Oracle Database Appliance&lt;/h3&gt;
+&lt;p&gt;Before starting deployment processes, we need to prepare the box accordingly. This post covers bare metal installation since virtualized platform not supported on the X6-2S. The preparation is as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Download and install the patches&lt;/strong&gt;&lt;br /&gt;
+Patches consists of Grid infrastruction and RDBMS. After the successful download, copy the same to USB drive which should have filesystem type of FAT32 to avoid any mouting error. The ODA patch bundle number may change with release. Installation as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; unzip p23494985_xxxxxx_Linux-x86-64_1of2.zip
+ unzip p23494985_xxxxxx_Linux-x86-64_2of2.zip
+ cat p23494985_xxxxxx_Linux-x86-64_1of2.zippart p23494985_xxxxxx_Linux-x86-64_2of2.zippart &amp;gt; GI.zip
+ update-image --image-files GI.zip
+ 
+ unzip p23494992_xxxxxx_Linux-x86-64.zip
+ update-image --image-files p23494992_xxxxxx_Linux-x86-64.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;ILOM configuration&lt;/strong&gt;&lt;br /&gt;
+ILOM is nothing but Integrated Light Out Manager designed by Sun provides advanced service processor hardware and software that you can use to manage and monitor Oracle Database Appliance. ILOM’s dedicated hardware and software is preinstalled on the server. Configuration part includes IP assigning and default password change.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Network configuration&lt;/strong&gt;&lt;br /&gt;
+In ODA, network configuration is as easy as entering the command &lt;code class=&quot;highlighter-rouge&quot;&gt;configure-firstnet&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPU core configuration&lt;/strong&gt;&lt;br /&gt;
+It consist of configuring how many core do you want to be enabled (Only needed if you want less than default number of cpu cores to be enabled according to the licence).&lt;/p&gt;
+
+&lt;h3 id=&quot;deploying-oracle-database-appliance&quot;&gt;Deploying Oracle Database Appliance&lt;/h3&gt;
+
+&lt;p&gt;You are now ready to deply ODA. Using the chrome or IE browser, enter the following URL:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; https://&amp;lt;ipaddress or hostname&amp;gt;:7093/mgmt/index.html  
+ Username: oda-admin  
+ Password &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: welcome1  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The video demonstration of Oracle Database Appliance deployment gives the complete idea of deployment.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://player.vimeo.com/video/256223442&quot;&gt;&lt;img src=&quot;/images/play-button.png&quot; alt=&quot;watch&quot; class=&quot;centre-image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://vimeo.com/256223442&quot;&gt;ODA_X6-2S_deployment&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/user81321720&quot;&gt;linuxmate&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;factory-resetting&quot;&gt;Factory Resetting&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Cation: It will wipe out all your Oracle Database Appliance configuration&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In case of mistake, where reployment is needed, the previous configuration can be wiped out using the command:&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;/opt/oracle/oak/onecmd/cleanup.pl&lt;/code&gt;&lt;br /&gt;
+This will reboot the server.&lt;br /&gt;
+After the reboot, you can confirm that the previous configuration has been erased:&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+ # odacli describe-appliance  
+ Appliance is not configured
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;integrated-with-the-oracle-public-cloud&quot;&gt;Integrated with the Oracle Public Cloud&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“As with all Oracle Database Appliance offerings, there is strong integration with the Oracle Public Cloud, especially with the Oracle Database Cloud Service, the Oracle Backup Cloud Service and the Oracle Archive Cloud Service. Most importantly, the Oracle Database Appliance and the Oracle Public Cloud run the same software, use the same tools, and require the same skills, making it easy for customers to migrate from on-premises to the cloud and even back again if necessary.” says &lt;a href=&quot;https://www.oracle.com/engineered-systems/database-appliance/x6-2s/index.html&quot;&gt;Oracle&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Installation" /><category term="Database" /><summary>Intoduction
+Oracle Database Appliance or ODA is an Oracle Engineered System that is simple to deploy and optimized. Here, we have, ODA X6-2S. It is designed for customers requiring only single instance databases. The deployment shall take not more than around 35 minutes. This post includes full how-to-deploy video which is more than enough for the complete deployment knowledge.</summary></entry><entry><title>How to configure chroot SFTP server in Linux</title><link href="http://localhost:4000/How-To-Configure-Chroot-SFTP-Server-In-Linux/" rel="alternate" type="text/html" title="How to configure chroot SFTP server in Linux" /><published>2018-01-23T00:00:00+05:30</published><updated>2018-01-23T00:00:00+05:30</updated><id>http://localhost:4000/How-To-Configure-Chroot-SFTP-Server-In-Linux</id><content type="html" xml:base="http://localhost:4000/How-To-Configure-Chroot-SFTP-Server-In-Linux/">## Introduction
+SFTP stands for Secure File Transfer Protocol. One of the perfect way to upload and download files. Normal FTP is not that secure to transfer data as it has security vulnerabilities. SFTP doesn&#39;t need any additional package when we have openssh installed in our machine. If we have SSH credentials, they can also act as SFTP but that is not secure way to share with everyone as it provides access to all filesystem files. Some configuration tweaks in the `/etc/ssh/ssh_config` file can limited this access to specific directory called chroot access which will secure enough to accessible by public. This is exactly what we are going to demonstrate here.
+
+## How-To-Do
+
+### 1. Create new user
+
+First of all, create a new user called **linuxmate** to provide people credentials who need access to the files:
+
+```bash
+sudo useradd linuxmate -s /sbin/nologin
+sudo passwd linuxmate
+```
+
+### 2. Add entries to `sshd_config` file
+
+Open-up `/etc/ssh/sshd_config` (careful with the file name, the same directory contains file named `ssh_config`) file and uncomment `Subsystem sftp /usr/lib/openssh/sftp-server` line then add new line:
+
+```bash
+#Subsystem sftp /usr/lib/openssh/sftp-server  
+Subsystem sftp  internal-sftp
+```
+
+Next we make provision access to a specific user which we created above:
+
+```bash
+Match User linuxmate  
+ChrootDirectory /sftpusers/chroot/  
+ForceCommand internal-sftp  
+AllowTcpForwarding no  
+X11Forwarding no
+```
+
+`Match User linuxmate` - Only provide access to linuxmate user, you can add group name with `Group` instead of `User` in the line.  
+`ChrootDirectory /sftpusers/chroot/` - It will be the sftp chroot directory.  
+`AllowTcpForwarding no` - It will not allow ssh jump connection. People will use the machine for SSH jump which can&#39;t be entertained as security will be compromised unless you are explicitly required.  
+`X11Forwarding no` - Restrict access to GUI applications.  
+
+Restart sshd service after successful configuration.
+
+### SFTP client access
+
+SFTP browser access can be achieved by adding browser extension or you are able to use FileZilla instead.  
+
+![sftp-client.png](/images/sftp-client.png)
+
+`address` - IP address of the server  
+`username` - linuxmate  
+`password` - _whatever you have entered_  
+`port` - 22  
+
+For commnad-line users:
+
+` sftp linuxmate@172.168.1.199`
+
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/asciinema-player.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;asciinema-player src=&quot;/cast/sftp.cast&quot; speed=&quot;2&quot; theme=&quot;asciinema&quot; poster=&quot;data:text/plain,\e[1;37mHow to \e[1;33mconnect \e[1;37mto sftp server&quot; cols=&quot;100&quot; rows=&quot;22&quot;&gt;&lt;/asciinema-player&gt;
+  &lt;script src=&quot;/assets/js/asciinema-player.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+### Conclusion
+
+I believe this tutorial is complete enough to make your own SFTP server. If you have business rule such as number of files to share with public or private, SFTP will be a much appropriate way of choice as it is encrypted and simple to configure from scratch compare to conventional FTP server. When we start deploy something, it is normal to rise doubts even if the documentation gives enough information. In that case, please don&#39;t hesitate to ask in the comment box below.</content><category term="sftp" /><category term="secure ftp" /><category term="ssh ftp" /><summary>Introduction
+SFTP stands for Secure File Transfer Protocol. One of the perfect way to upload and download files. Normal FTP is not that secure to transfer data as it has security vulnerabilities. SFTP doesn’t need any additional package when we have openssh installed in our machine. If we have SSH credentials, they can also act as SFTP but that is not secure way to share with everyone as it provides access to all filesystem files. Some configuration tweaks in the /etc/ssh/ssh_config file can limited this access to specific directory called chroot access which will secure enough to accessible by public. This is exactly what we are going to demonstrate here.</summary></entry><entry><title>Iptables - A simple use case</title><link href="http://localhost:4000/Iptables-A-Simple-Use-Case/" rel="alternate" type="text/html" title="Iptables - A simple use case" /><published>2018-01-02T00:00:00+05:30</published><updated>2018-01-02T00:00:00+05:30</updated><id>http://localhost:4000/Iptables-A-Simple-Use-Case</id><content type="html" xml:base="http://localhost:4000/Iptables-A-Simple-Use-Case/">### Introduction
+Iptables is a user-space utility program that allows a system administrator to configure the tables provided by the Linux kernel firewall (implemented as different Netfilter modules) and the chains and rules it stores.
+
+&gt; &quot;Iptables is a command line utility for configuring Linux kernel firewall implemented within the Netfilter project. The term iptables is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many frontends and GUIs. iptables is used for IPv4 and ip6tables is used for IPv6.&quot; says [ArchWiki](https://wiki.archlinux.org/index.php/iptables)
+
+### Installation
+
+Redhat based distribution
+
+```bash
+yum install iptables
+```
+
+Debian-based distribution
+
+```bash
+apt-get install iptables
+```
+
+After the successful installation, make sure the service is up and running. I use Ubuntu 16.04 LTS for explaning iptables here as Linux box. Clear all pre-loaded rule in iptables by the command `iptables -F` `iptables -F -t nat`. Enable iptables in start-up using `systemctl enable iptables`.
+
+### Use case
+
+I have been using iptables on a regular basis in my Linux-box specially assigned for network routing jobs which is Ubuntu 16.04 LTS server edition. NAT (Network Address Translation) is the iptables&#39;s feature which I am more impressed with.
+
+&gt; &quot;Network address translation (NAT) is a method of remapping one IP address space into another by modifying network address information in IP header of packets while they are in transit across a traffic routing device.&quot; says Wikipedia.
+
+Any Linux-box is having two NIC (Network Interface Card) can be turn into a router with following command:
+
+     echo 1 &gt; /proc/sys/net/ipv4/ipv4_forward
+
+For persistent changes, open `/etc/sysctl.conf` and uncomment `net.ipv4.ip_forward=1`
+
+Now the second NIC can talk to internet without flaws. NAT is mainly divided into DNAT (Destination NAT) and SNAT (Source NAT). In simple, SNAT and MASQUERADE are for outside traffic routing while DNAT for inside one. Let us take one example here.
+ 
+                      eth0      ____      eth1                       .-,(  ),-.
+      ____   __    192.168.1.1 |====| 125.99.121.62               .-(          )-.
+     |    | |==|--------------&gt;|    |---------&gt;               --&gt;(    internet    )
+     |____| |  |               |    |          |              ^   &#39;-(          ).-&#39;
+     /::::/ |__|               |____|          |    ______    |       &#39;-.( ).-&#39;
+                                               &#39;--&gt;|_ooo_°|---&#39;
+     Workstation               Router
+       Fedora          Ubuntu 16.04 LTS Server     ISP Modem
+ 
+As the above diagram shows, Fedora 27 is my PC and Ubuntu 16.04 LTS Server is a headless server which acts as a router here. For inside network we have `eth0` network interface while `eth1` connects to the internet. I have removed `ufw` which is iptables front-end application comes default with Ubuntu distribution. To make some fresh rules we need to flush iptables rules first:
+
+     sudo iptables -F
+     sudo iptables -F -t nat
+
+We have internal IP of 192.168.1.1 which will act as router IP and pre-configured as DHCP server. Assuming Workstation(enp2s1) has assigned the IP of 192.168.1.2 as the Workstation configured in `/etc/network/interfaces` to ask IP from DHCP server in Ubuntu machine:
+
+     auto enp2s1
+     iface enp2s1 inet dhcp
+
+Ubuntu machine will now act as a gateway for Fedora machine and every query hits to the NIC `eth0`. Our next step is to configure `iptables` to MASQUERADE the traffic coming to `eth0` so that the internal host such as `192.168.1.2` can talk to internet. As I mentioned above, this is inside to outside traffic using the Ubuntu gateway so we use MASQUERADE or SNAT rules in POSTROUTING chain.
+
+     sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+Now we are able to ping to 8.8.8.8 from Fedora machine as we are connected to internet. SNAT particularly useful for changing the source IP when it comes to internal to external traffic.  
+
+Let us take DNAT into account. Consider we require a ssh connection to Fedora machine from outside world or internet (Assuming our ISP allows this, they do not usually though). This time rule is adding to PREROUTING chain:
+
+     sudo iptables -t nat -A PREROUTING -j DNAT -p tcp --dport 22 --destination 125.99.121.62 --to-destination 192.168.1.2
+
+`dport`: port of Ubuntu machine  
+`destination`: IP of Ubuntu machine  
+`to-destination`: IP of Fedora machine  
+
+### Conclusion
+We have gone through very little possibilities of iptables here. This knowledge is more enough to turn your unused PC or inexpensive dedicated PC such as Raspberry Pi into a full functioning home router. I have been using DIY home router for the past some years. If you could find any doubts, do not hesitate to ask me in the comment box below.</content><summary>Introduction
+Iptables is a user-space utility program that allows a system administrator to configure the tables provided by the Linux kernel firewall (implemented as different Netfilter modules) and the chains and rules it stores.</summary></entry><entry><title>Docker - A brief introduction</title><link href="http://localhost:4000/Docker-A-brief-Introduction/" rel="alternate" type="text/html" title="Docker - A brief introduction" /><published>2017-12-02T00:00:00+05:30</published><updated>2017-12-02T00:00:00+05:30</updated><id>http://localhost:4000/Docker-A-brief-Introduction</id><content type="html" xml:base="http://localhost:4000/Docker-A-brief-Introduction/">#### What is Docker?  
+Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. By doing so, thanks to the container, the developer can rest assured that the application will run on any other Linux machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code.
+
+#### Why do I use Docker?  
+The prime most reason of using docker is portability of application which I use everyday life such as Jekyll. Since I use different Linux distributions across machines from my place to office I could find docker would be the perfect solution for creating instant environment which my application needs. And it is completely different from conventional virtual machines, as you can see here.
+
+![dockervsvm](/images/docker/dockervsvm.png)
+
+I use virtual machines but not for specific needs like website designing and distribution related terminal testing. When you switch to Docker from conventional virtual machines, you could free up considerable amount of  machine resources as well.
+
+#### How to install Docker?  
+Docker installation is well-described in the Docker [documentation](https://docs.docker.com/engine/installation/) page for any operating system which you are using. I always recommend you to install Docker from official website instead of installing from your Linux-distribution-repository or other - a good practice of installation.
+
+#### How to start using Docker  
+Now you are installed Docker and let&#39;s start using it. Here, I&#39;m not going to go through the Docker tutorials which you could find easily from Docker official website, instead, I give you a brief introduction of how to use apache2 inside docker.
+
+I use Jekyll and have encountered many dependency issues. The beauty of Docker is that we can run a specific application inside a fully configured docker container and carry that container to anywhere to run the same. That is, we are able to move the whole setup and run the application out of it regardless of what operation systems we are using. Since then I started using Docker I haven&#39;t cared about the application configurations. It would give the productive environment for whatever we work with.
+
+&lt;b&gt;Useful commands to remember: &lt;/b&gt;
+
+``` bash
+ docker run -ti container-name/tag
+ # example: docker run -ti ubuntu:16.04
+ # create a ubuntu 16.04 image and run that container
+ 
+ docker -exec -ti container-name/tag command
+ # example: docker -exec -ti /bin/bash
+ # run specific command
+ 
+ docker container ls --all
+ # list all installed docker containers
+ 
+ docker images -a
+ # list all installed docker images
+ 
+ docker rmi image-name
+ # example: docker rmi ubuntu:16.04
+ # remove docker image
+ 
+ docker container rm container-id
+ # example: docker conatainer rm 0fd2ff7b757a
+ # remove docker container
+ 
+ docker commit container-id image-name
+ # example docker commit ff4d9939e45c ubuntu:custom
+ # create custom docker image
+ 
+ docker inspect container-name
+ # example: docker inspect ubuntu:16.04
+ # shows running docker container description
+ 
+ docker ps
+ # shows docker process
+ 
+ docker build -t image-name
+ # example: docker build -t jekyll:xenial .
+ # build image from Dockerfile
+ 
+ docker pull image-name:tag
+ # example docker pull base/archlinux:latest
+ # pulls docker image from Docker Hub
+ 
+ docker push images-name:tag
+ # example: docker push ubuntu:custom
+ # pushes docker image to Docker Hub
+ 
+```
+&lt;b&gt;Docker Image vs Container&lt;/b&gt;
+
+![dockerarch](/images/docker/dockerarch.png)
+
+The major difference between a container and an image is the top writable layer. All writes to the container that add new or modify existing data are stored in this writable layer. When the container is deleted, the writable layer is also deleted. The underlying image remains unchanged.
+
+Let&#39;s come back to the demonstration. First of all, we require one base OS to work with inside the docker, I prefer Ubuntu 16.04 to pull from Docker Hub.
+
+![dockerpull](/images/docker/dockerpull.png)
+
+Now we have our Docker image to work with. Go to the Docker container and start configure apache2 with the command `docker run -ti ubuntu:16.04 /bin/bash`.
+
+![dockerrun](/images/docker/dockerrun.png)
+
+![dockerapache2](/images/docker/dockerapache2.png)
+
+![dockerservice](/images/docker/dockerservice.png)
+
+As you can see here, I have started the apache2 service successfully. Now we have our Docker conatainer is ready to commit. Commit is the command in which Docker saves the current changes of the container that we have made in the image we pulled earlier. For this, we should open an another terminal with docker terminal aisde. After a successful commit we can exit from the docker terminal.
+
+![dockercommit](/images/docker/dockercommit.png)
+
+Now we are close to start using apache. To start a web server index.html is inevitable. In the next step we create index.html file and run apache2 docker we have created recently.
+
+![dockerstart](/images/docker/dockerstart.png)
+
+Good work! We have made it. The only thing left to do is check whether it is working properly. Docker basically makes their own network card interface in the host machine. We can check the same using the command `ip addr show dev device-name`. Here I use curl command to check whether our link works proper. You may use whatever you like such us Chrome or Mozilla browser.
+
+![dockeroutput](/images/docker/dockeroutput.png)
+
+Voila! We have done it. To make our task easy we can also use Dockerfile and docker-compose file.
+
+&lt;b&gt;Dockerfile vs docker-compose&lt;/b&gt;
+![dockerfile](/images/docker/dockerfile.jpg)
+
+Simple example of Dockerfile
+
+```bash
+ FROM ubuntu:16.04
+ RUN apt-get update &amp;&amp; apt-get apt-utils
+ RUN apt-get update &amp;&amp; apt-get install -y gem make gcc ruby ruby-dev vim git
+ RUN gem install jekyll jekyll-paginate
+ MAINTAINER kevy
+```
+![dockerup](/images/docker/dockerup.jpg)
+
+Simple example of docker-compose.yml
+
+```
+ version: &quot;2&quot;
+ services:
+         jekyll:
+                 image: jekyll:xenial
+                 container_name: jekyll
+                 ports:
+                         - &quot;4000:4000&quot;
+                 volumes:
+                         - &quot;$PWD:/home&quot;
+                 command: &quot;jekyll serve --host=0.0.0.0 --source=/home --incremental --watch&quot;
+```
+
+### Conclusion
+I&#39;m well aware of that this post is not a zero to hero Docker information but this would make you start thinking about how Docker become useful for you.  
+Thank you for reading.</content><category term="application" /><category term="docker" /><category term="linux docker" /><category term="docker commands" /><summary>What is Docker?
+Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. By doing so, thanks to the container, the developer can rest assured that the application will run on any other Linux machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code.</summary></entry><entry><title>Pihole - Adblocker for your network</title><link href="http://localhost:4000/Pihole-Ad-blocker-for-your-network/" rel="alternate" type="text/html" title="Pihole - Adblocker for your network" /><published>2017-10-11T00:00:00+05:30</published><updated>2017-10-11T00:00:00+05:30</updated><id>http://localhost:4000/Pihole-Ad-blocker-for-your-network</id><content type="html" xml:base="http://localhost:4000/Pihole-Ad-blocker-for-your-network/">**Pihole briefly a ad-blocker application which can be directly deployed in Linux machines to clean the network from advertisements. A Raspberry-pi will do the job very neatly if dedicated computer is your primary concern.**
+
+As we all know, common ad-blocker application will do the job in some extent but this one can make the difference, I can tell you that. Installation is as simple as copy-paste one-line command from the official website. After the successful installation we are provided with a assigned IP which should be put into the DNS part of the devices. DNS-level ad-block is the most highlighted features of Pi-hole as we don&#39;t have to configure anything in the access side by configuring the router to have DHCP client use the Pi-hole installed device as their DNS server.
+
+![android_dns_setting](/images/dns.jpg)
+
+Supported operating systems
+:   Raspbian: Jessie (lite / with pixel)  
+    Ubuntu: 14.04 / 16.04 / 16.10  
+    Fedora: 24 / 25  
+    Debian: 8.6  
+    CentOS: 7.2.1511 / 7.3.1611  
+
+We could also install Pi-hole in our personal laptop/desktop if you don&#39;t want any dedicated device for the same. 
+
+Pi-hole provides information-rich web interface which through we could keep track of the stats and change settings. We can find it at:
+http://your-ip/admin/index.php or http://pi-hole/admin
+
+If you are having a working Linux device, definitely you should give Pi-hole a try. 
+
+Thank you for reading.</content><category term="Command-line" /><summary>Pihole briefly a ad-blocker application which can be directly deployed in Linux machines to clean the network from advertisements. A Raspberry-pi will do the job very neatly if dedicated computer is your primary concern.</summary></entry><entry><title>SSH Connection Over Internet Without Static IP</title><link href="http://localhost:4000/SSH-Connection-Over-Internet-Without-Static-IP/" rel="alternate" type="text/html" title="SSH Connection Over Internet Without Static IP" /><published>2017-09-30T00:00:00+05:30</published><updated>2017-09-30T00:00:00+05:30</updated><id>http://localhost:4000/SSH-Connection-Over-Internet-Without-Static-IP</id><content type="html" xml:base="http://localhost:4000/SSH-Connection-Over-Internet-Without-Static-IP/">**If you do have some Raspberry Pi projects, you should have probably tried ssh (Secure Shell). Most of all the Raspberry Pi projects are rely on the ssh remote connection. Wouldn&#39;t it be super beneficial if we could use the ssh connection through internet without any static IP and other router configuration headaches?**
+
+Recently, I have tried one Raspberry Pi project which particularly related to surveillance. The core part of the project was ssh connection through internet. I made that easy with the help of [Dataplicity](https://www.dataplicity.com); Remotely access Raspberry Pi from anywhere in the world via web browser without DynDNS, VPN, Static IP or port forwarding. It is absolutely free of charges for one device per account. Installation process is very simple as signing up an account and copy the url which provides at the end. Next step is to login as root in the terminal and paste that url to start the installation. When it is completed, device can be accessible from the Dataplicity account. It also supports all the Debian based distributions. More information can be found in the Dataplicity [documentation pages](https://docs.dataplicity.com). Last but not least, Dataplicity Android app is available in the Google Play Store.</content><category term="Debian" /><summary>If you do have some Raspberry Pi projects, you should have probably tried ssh (Secure Shell). Most of all the Raspberry Pi projects are rely on the ssh remote connection. Wouldn’t it be super beneficial if we could use the ssh connection through internet without any static IP and other router configuration headaches?</summary></entry><entry><title>VIM Tricks</title><link href="http://localhost:4000/VIM-Tricks/" rel="alternate" type="text/html" title="VIM Tricks" /><published>2017-09-20T00:00:00+05:30</published><updated>2017-09-20T00:00:00+05:30</updated><id>http://localhost:4000/VIM-Tricks</id><content type="html" xml:base="http://localhost:4000/VIM-Tricks/">Vim is a greatly improved version of the good old UNIX editor Vi. As we all need and core reason behind the choice of Linux OS is the customization. Isn&#39;t it? So is Vim. You may find common Vim tricks just by typing some keywords in the Google. Excluding that, here, I do have handful of some other.  
+
+**vim-tmux-runner**  
+This is one of our favorite. As the name suggests, tmux has something to do with this. It is simple as this, whatever we type in the one pane of tmux can be thrown away to the next and execute right away. GIF image shown here will demonstrate the idea. No doubt, this will blissful for script writers. The complete instruction of installation can be found in the creator&#39;s Github [repository](https://github.com/christoomey/vim-tmux-runner).   
+
+![vim_tmux_runner](/images/vim_tmux_runner.gif)
+
+**vim-clipboard-copy**  
+We all are familiar with `y` for copy and `p` for paste, but this features limited inside the Vim. Simply install `vim-gtk` package to get this feature out of the Vim. After the installation, press `&quot;+y` to copy contents to clipboard directly. If in case you do not know just open a new terminal window and run these two commands, entering your password when prompted:
+
+```bash
+sudo apt-get update
+sudo apt-get install vim-gtk
+```
+
+**vim-color-scheme**  
+Specific color pattern is very significant for script writers. It gives quick idea of content in the first glimpse. Although bunch of color schemes are readly available in Github repository, It is hard to go not mentioning [this](https://github.com/jacoborus/tender.vim) one.</content><category term="Terminal" /><category term="Commands" /><summary>Vim is a greatly improved version of the good old UNIX editor Vi. As we all need and core reason behind the choice of Linux OS is the customization. Isn’t it? So is Vim. You may find common Vim tricks just by typing some keywords in the Google. Excluding that, here, I do have handful of some other.</summary></entry><entry><title>Pandoc - Simple Text to PDF Conversion</title><link href="http://localhost:4000/Pandoc-Simple-Text-to-PDF-Conversion/" rel="alternate" type="text/html" title="Pandoc - Simple Text to PDF Conversion" /><published>2017-09-07T00:00:00+05:30</published><updated>2017-09-07T00:00:00+05:30</updated><id>http://localhost:4000/Pandoc-Simple-Text-to-PDF-Conversion</id><content type="html" xml:base="http://localhost:4000/Pandoc-Simple-Text-to-PDF-Conversion/">**Although we do have rich-text editors, we do not really need those, which comes heavy, to write a simple letter and save it as PDF file. Moreover, some people like to work in terminal to make their work distraction-free (Yes, The complete Game of Thrones book was written with VIM text editor). Here, I am using VIM and PANDOC to do that job.**  
+
+Pandoc is a simple command-line interface (CLI) tool which converts text to PDF, not only `.txt` files, but also `.html`, `.md` and more. First of all, we are using VIM to write the content and `:wq!` to save it. Pandoc uses `-i` to source the file and `-o` to output the file.  
+For example,
+
+&gt;pandoc -i file.txt -o file.pdf  
+
+In addition, pandoc can read Markdown format to enhance output.
+
+`Bold **text**`  
+`Italics *text*`  
+`Quote &gt;text`  
+`Image [imageName](path)`  
+`Link [text](link)`  
+`Title %text`
+
+You must be wondering why do we need to learn all these to write a simple letter and why did I put the word simple in this blog title. But trust me, it&#39;d worth learning. Markdown format will be very useful in many websites. Last but not least, I have added [here](/kevydotvinu.github.io/img/pandoc.pdf) the pdf copy of this post to get convinced.</content><category term="Tools" /><category term="Commands" /><summary>Although we do have rich-text editors, we do not really need those, which comes heavy, to write a simple letter and save it as PDF file. Moreover, some people like to work in terminal to make their work distraction-free (Yes, The complete Game of Thrones book was written with VIM text editor). Here, I am using VIM and PANDOC to do that job.</summary></entry><entry><title>Fancy Terminal</title><link href="http://localhost:4000/Fancy-Terminal/" rel="alternate" type="text/html" title="Fancy Terminal" /><published>2017-09-04T00:00:00+05:30</published><updated>2017-09-04T00:00:00+05:30</updated><id>http://localhost:4000/Fancy-Terminal</id><content type="html" xml:base="http://localhost:4000/Fancy-Terminal/">All Hacker&#39;s movies have one thing in common which attract us the most is computer terminal that feeds continuous text. Here, I have a simple script that resembles those fancies a very little.
+
+```bash
+function fetch {
+while [ 0 ] 
+do wget -qO - http://www.commandlinefu.com/commands/random/plaintext | \
+grep -v questions/comments | \
+grep -v ScriptRock.com |  \
+pv -q -L 9
+sleep 1s
+done
+}
+```
+
+Append this script in `.bashrc` file and source the same to see the magic like this.
+&amp;nbsp;
+
+![hacker](/img/hacker.gif)</content><category term="Commandline" /><summary>All Hacker’s movies have one thing in common which attract us the most is computer terminal that feeds continuous text. Here, I have a simple script that resembles those fancies a very little.</summary></entry><entry><title>Install GRUB On USB Drive</title><link href="http://localhost:4000/Install-GRUB-on-USB-drive/" rel="alternate" type="text/html" title="Install GRUB On USB Drive" /><published>2017-07-12T00:00:00+05:30</published><updated>2017-07-12T00:00:00+05:30</updated><id>http://localhost:4000/Install-GRUB-on-USB-drive</id><content type="html" xml:base="http://localhost:4000/Install-GRUB-on-USB-drive/">If we are having GRUB installed on our USB drive, live CD booting will be easier from ISO files. Here assuming ``/dev/sda1`` is your device.
+
+Open Terminal
+
+&gt; mkdir /mnt/USB
+
+&gt; mount /dev/sda1 /mnt/USB
+
+&gt; sudo grub-install --force --no-floppy --boot-directory=/mnt/USB/boot /dev/sda
+
+&gt; cd /mnt/USB/boot/grub
+
+&gt; wget pendrivelinux.com/downloads/multibootlinux/grub.cfg
+
+Edit ``grub.cfg`` as per your need.
+
+Done.</content><category term="Commandline" /><summary>If we are having GRUB installed on our USB drive, live CD booting will be easier from ISO files. Here assuming /dev/sda1 is your device.</summary></entry></feed>
