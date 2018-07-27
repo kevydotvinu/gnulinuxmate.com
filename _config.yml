@@ -2,6 +2,7 @@
 title: linuxmate
 description: A typical Linux blog
 url: https://www.linuxmate.ml/twocolumn
+baseurl: /
 logo: halve.png                                       # Site logo
 locale: en_US
 
