@@ -1,7 +1,7 @@
 # Site
 title: linuxmate
 description: A typical Linux blog
-url: http://localhost:4000
+url: /
 logo: halve.png                                       # Site logo
 locale: en_US
 
