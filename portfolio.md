@@ -2,15 +2,16 @@
 layout: portfolio
 title: Vinu K
 subtitle: "An avid fan of Linux and open-source enthusiast"
-css: /css/portfolio.css
+css: /assets/css/portfolio.css
 image: /images/portfolio.jpg
 ---
 
+<link href="/assets/css/portfolio.css" rel="stylesheet"/>
 <div id="portfolio-section">
 
 <p class="portfolio-text">
 <span class="fa fa-briefcase portfolio-icon"></span>
-I am currently a <strong>Linux Professional</strong> and walking in the track of <strong>OpenStack</strong>. Previously, I worked as an <strong>Electrical Engineer</strong> (then, why Linux? I had a vision, so to speak) in start-up.
+I am currently a <strong>Linux Professional</strong> and passionately walking in the track of <strong>OpenStack</strong>. Previously, I worked as an <strong>Electrical Engineer</strong> (then, why Linux? I had a vision, so to speak) in start-up.
 </p>
 
 <p class="portfolio-text">

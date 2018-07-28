@@ -1,0 +1,19 @@
+#portfolio-section {
+  font-size: 19px;
+}
+
+.portfolio-text {
+  position: relative;
+  margin-left: 30px;
+}
+
+.portfolio-icon {
+  font-size: 24px;
+  position: absolute;
+  left: -40px;
+  margin-top: 5px;
+}
+
+#portfolio-section p:last-child {
+  margin-bottom: 0;
+}
