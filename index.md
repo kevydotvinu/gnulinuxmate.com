@@ -1,15 +1,10 @@
 ---
 layout: home
 ---
-# About Me
+# About Theme
 
-Hello there, call me kevy. I know English, മലയാളം (Malayalam), हिंदी (Hindi) and a smattering of தமிழ் (Tamil). I am an avid fan of Linux and open source enthusiast. I have been enjoying Linux for the past one decade. Back in 2007, I stumbled upon an article about Ubuntu live CD. I didn't know it at the time but that moment changed my life. I know that statements like that belong on those exaggerators but it is actually true. Within 24 hours of reading the article I had turned my own desktop into Ubuntu one -- a platform where I have explored everything about Linux ever since. I have learned so much from the experience of that try that I have since tried many other Linux distributions.
-{: style="text-align: justify;"}
+This theme is Jekyll port of [vangeltzo.com](http://vangeltzo.com/) (by [Vangelis Tzortzis](https://github.com/srekoble)).
 
-<br>
+To learn how to install and use this theme check out the [installation guide](http://taylantatli.me/Halve/halve-theme/) for more information.
 
-# Contact
-<br>
-vinu@linuxmate.ml
-
-[P/GPG key](https://goo.gl/5w8ccu){: .btn .btn_warning}
+If you have a question, find a bug, or just want to say hi, please open an [issue on GitHub](https://github.com/TaylanTatli/Halve/issues/new).
