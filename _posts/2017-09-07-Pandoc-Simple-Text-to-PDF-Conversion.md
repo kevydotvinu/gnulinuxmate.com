@@ -1,9 +1,9 @@
 ---
+layout: post
 title: Pandoc - Simple Text to PDF Conversion
 subtitle: Think about converting a simple text-file to mail-ready PDF document
-share-img: /img/pandoc.png
 tags: [Tools, Commands]
-image: /img/pandoc.png
+image: /images/pandoc.jpg
 ---
 
 **Although we do have rich-text editors, we do not really need those, which comes heavy, to write a simple letter and save it as PDF file. Moreover, some people like to work in terminal to make their work distraction-free (Yes, The complete Game of Thrones book was written with VIM text editor). Here, I am using VIM and PANDOC to do that job.**  
@@ -22,4 +22,4 @@ In addition, pandoc can read Markdown format to enhance output.
 `Link [text](link)`  
 `Title %text`
 
-You must be wondering why do we need to learn all these to write a simple letter and why did I put the word simple in this blog title. But trust me, it'd worth learning. Markdown format will be very useful in many websites. Last but not least, I have added [here](/kevydotvinu.github.io/img/pandoc.pdf) the pdf copy of this post to get convinced.
+You must be wondering why do we need to learn all these to write a simple letter and why did I put the word simple in this blog title. But trust me, it'd worth learning. Markdown format will be very useful in many websites. Last but not least, I have added [here](/images/pandoc.pdf) the pdf copy of this post to get convinced.
