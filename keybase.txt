@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/kevydotvinu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://linuxmate.ml
+  * I am kevydotvinu (https://keybase.io/kevydotvinu) on keybase.
+  * I have a public key with fingerprint 14D8 B939 7A8F 10DA 44B0  0FE3 B5CC F2B7 D917 627C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e64d55bc3373d860708c3178fd6fa7767839dab292743207209136f1b127b6200a",
+      "fingerprint": "14d8b9397a8f10da44b00fe3b5ccf2b7d917627c",
+      "host": "keybase.io",
+      "key_id": "b5ccf2b7d917627c",
+      "kid": "0101e64d55bc3373d860708c3178fd6fa7767839dab292743207209136f1b127b6200a",
+      "uid": "a2e0c756d0f5701436fcc1895b897219",
+      "username": "kevydotvinu"
+    },
+    "service": {
+      "hostname": "linuxmate.ml",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1516176856,
+  "expire_in": 157680000,
+  "prev": "09d56dbc2b8d8087d4b5ccbb956c07c279d8f221d90f30483e5417825cb09344",
+  "seqno": 53,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUmtQVGUY3l2kvCKX1DLpx3EGR1jp3C+LxaiFTKNgKlEOw3bO+b4DB5bdZffs
+CsJu5MhAqczSlMGUwyUvZRPdYGNgmCE0JFAuFoQhactMRICtlsolonMY+9fPvj/f
+fO/7PM/3vM+8vjUhOoO+6crdr65vEIr1PROC7pA59OciRLCBQsRUhOTCpQtaAHQq
+5lwZICYExVAM0iSgKEEkCIYALI0yKCsSGMNKgJZ4hqEZluAAL+AczpAEjjI4ymEE
+LWEChjMCjaMojxgRSbZmQYfdIVsVVRYjAStwBMfwrIShgCdJAUUlSAiUKEq4wAAO
+Y2icEVVits2pMVRzAu+E8bJNrakP85K9/8D/z75dS3I8DlGRoWiAShSDYqQKE0WM
+5SiB5Rgc4zSgEzqsfB5c8uouBDbFLVtdiMeIqA23LEItW22YhyCL2i3I4xUYn2dR
+6XaHTbGJNovayVYUu9OkMZVCuwY9DAXzQxGzIFuBGqXKcEOHU7ZZEROmIkVF1lQx
+CqPVJFiKNiKwwC47oFnWEJRaQ9Wj/QPdWj4coDJoIIi4wAIWZRlAalkKAkfRIsqI
+OMMBVsJxDHCoRKAkS0CKVLPDKVFAOYIkEW2ufKsNMVGEapTPUkWdcpaVV1wOiHhW
+vmHYtEynN+geCTVoW6ZbuSL839Vz4GsXs+m01QuZ/g/H+ze9vW36Xk1staXcF3z5
+0/Cb18FvUSbL3knfnqc7As3nX08sNZQMrd8WRdyZa7dXZCC6jJLIkz3m4Pubt6RW
+h86YKp6rvtR2ecI4b2+IHJyaL72YmNZ95vfjhUa5eezA2PSqx2LSj8bdaUb630v+
+wXCwvmRD9uzwM2lhnZ99ESh+8Rd/yt9PuONS5Oi/Bttivx/YWfH1/L5Pdg5cDfYm
+V524H5YRcDf5Rg6dqq1/c/mPl9+a9M8Mncg9MzHrDXsqBI68NhaXaxme/tzjyf+z
+Mz+48XS3LiXyXAQfaIsPXOjIHPb/mvBx0sjy0WM54QnP5315t0t/HDwp1R4uGw+2
+7OKP1F3KyWzkJkPvHQtb1bGxuKH8Ss2NWjDuLnhnf/9aGBERmf/qaNmjGe1699mU
+1Y0xw1xQGfvmXNvU9pnuD0rWb29bXFP54NsWL/lTYu01eHToNlXW5N2xL/2PQUtW
+zoPbyCnvQutgKg/3Pxuy6P+oK6U0OW4INuyOLren9fbtuNbfHrt3M9k4GvtKS3Kl
+nmk+WL+ndyqgJNx6POqqYaGlqGD+YqN7WfOuF5JONkbmGs9WFd1YdEX7PK5b7/a1
+1oFOa/ncnNdXl5iU8F33ff/YVq9Hcs2e72mdm6y7eSA5vSa1KmfrS+6FdStmXEcG
+LgQKSzxdw+tO16bH9FVuoVL/AQ==
+=E7ME
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kevydotvinu
+
+==================================================================
+
