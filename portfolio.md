@@ -2,7 +2,6 @@
 layout: portfolio
 title: Vinu K
 subtitle: "An avid fan of Linux and open-source enthusiast"
-css: /assets/css/portfolio.css
 image: /images/portfolio.jpg
 ---
 
