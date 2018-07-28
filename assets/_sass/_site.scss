@@ -56,7 +56,8 @@ canvas {
   border-radius: 3px;
   cursor: pointer;
   z-index: 3;
-  &:before {
+  &:before,
+  &:after {
     content: '';
     position: absolute;
     left: -19px;
@@ -74,7 +75,8 @@ canvas {
     height: 15px;
     border: 2px solid $gray;
     border-radius: 3px;
-    &:before {
+    &:before,
+    &:after {
       content: '';
       position: absolute;
       left: -19px;
@@ -87,12 +89,14 @@ canvas {
   }
   &:hover {
     border-color: $green;
-    &:before {
+    &:before,
+    &:after {
       border-color: $green;
     }
     span {
       border-color: $green;
-      &:before {
+      &:before,
+      &:after {
         border-color: $green;
       }
     }
