@@ -2,8 +2,7 @@
 layout: post
 title: Fancy Terminal
 subtitle: Movie-like terminal to get people's attention
-image: /img/terminal.svg
-share-img: /img/terminal.svg
+image: /images/terminal.jpg
 tags: [Commandline]
 ---
 All Hacker's movies have one thing in common which attract us the most is computer terminal that feeds continuous text. Here, I have a simple script that resembles those fancies a very little.
@@ -23,4 +22,4 @@ done
 Append this script in `.bashrc` file and source the same to see the magic like this.
 &nbsp;
 
-![hacker](/img/hacker.gif)
+![hacker](/images/hacker.gif)
