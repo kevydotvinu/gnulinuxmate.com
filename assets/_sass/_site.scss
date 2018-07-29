@@ -392,7 +392,8 @@ canvas {
   color: $white;
   h1 {
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: lowercase;
+    font-family: 'Rock Salt', cursive;
     letter-spacing: 1px;
   }
   h2 {
