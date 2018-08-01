@@ -3,6 +3,10 @@ layout: post
 title: Oracle Database Appliance Deployment
 subtitle: A complete video demonstration
 image: /images/oracle.jpg
+redirect_from: 
+ - /Oracle-Database-Appliance-Deployment/
+ - /2018-02-15-Oracle-Database-Appliance-Deployment/
+permalink: /2018/02/15/Oracle-Database-Appliance-Deployment/
 tag: [Installation, Database]
 ---
 
