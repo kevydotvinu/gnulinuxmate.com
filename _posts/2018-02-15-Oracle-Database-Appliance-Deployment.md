@@ -9,25 +9,6 @@ redirect_from:
 tag: [Installation, Database]
 ---
 
-{:toc}
-
-
-<style>
-#markdown-toc::before {
-    content: "Contents";
-    font-weight: bold;
-}
-#markdown-toc ul {
-    list-style: decimal;
-}
-#markdown-toc {
-    border: 1px solid #aaa;
-    padding: 1.5em;
-    list-style: decimal;
-    display: inline-block;
-}
-</style>
-
 ### Intoduction
 Oracle Database Appliance or ODA is an Oracle Engineered System that is simple to deploy and optimized. Here, we have, ODA X6-2S. It is designed for customers requiring only single instance databases. The deployment shall take not more than around 35 minutes. This post includes full how-to-deploy video which is more than enough for the complete deployment knowledge.
 
