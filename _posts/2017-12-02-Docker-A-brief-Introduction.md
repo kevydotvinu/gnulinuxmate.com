@@ -4,6 +4,7 @@ layout: post
 subtitle: Perfect tool for multi platform users
 description: How to use docker?
 image: /images/docker.jpg
+redirect_from: /2017-12-02-Docker-A-brief-Introduction/
 tag: [application, docker, linux docker, docker commands]
 ---
 

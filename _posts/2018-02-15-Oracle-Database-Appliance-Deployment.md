@@ -6,7 +6,6 @@ image: /images/oracle.jpg
 redirect_from: 
  - /Oracle-Database-Appliance-Deployment/
  - /2018-02-15-Oracle-Database-Appliance-Deployment/
-permalink: /2018/02/15/Oracle-Database-Appliance-Deployment/
 tag: [Installation, Database]
 ---
 

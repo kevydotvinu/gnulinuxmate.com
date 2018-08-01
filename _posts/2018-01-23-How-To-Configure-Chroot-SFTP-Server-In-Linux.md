@@ -3,6 +3,7 @@ layout: post
 title: How to configure chroot SFTP server in Linux
 subtitle: Only SFTP access, not SSH
 image: /images/sftp.jpg
+redirect_from: /2018-01-23-How-To-Configure-Chroot-SFTP-Server-In-Linux/
 tag: [sftp, secure ftp, ssh ftp]
 ---
 

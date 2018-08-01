@@ -3,6 +3,7 @@ layout: post
 title: Iptables - A simple use case
 subtitle: A very little knowledge of iptables can replace your expensive home router
 image: /images/iptables.jpg
+redirect_from: /2018-01-02-Iptables-A-Simple-Use-Case/
 share-img: /img/iptables.png
 ---
 
