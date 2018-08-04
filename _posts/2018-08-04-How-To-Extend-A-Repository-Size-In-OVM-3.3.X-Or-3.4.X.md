@@ -28,7 +28,7 @@ This should show the new size of the repository in manager UI.
 `fdisk` should now report the new size for the devices, but if the devices are multipathed using device-mapper-multipath, then the multipath maps also need to be updated.
 
 ```bash
-multipathd -k"resize map mpathN
+multipathd -k"resize map mpathN"
 ```
 
 Next, we need to extend the ocfs2 filesystem to fill the newly extended LUN.
