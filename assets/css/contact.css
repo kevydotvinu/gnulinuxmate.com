@@ -13,6 +13,17 @@
 
 #contact-form .form-control {
   margin-bottom: 15px;
+  width: 95%;
+  color: grey;
+  border-radius: 3px;
+  text-color: black;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: lightwhite;
+  border: 2px solid #D3D3D3;
+  border-radius: 4px;
+  font-size: 80%;
 }
 
 
