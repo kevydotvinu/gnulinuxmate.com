@@ -7,6 +7,9 @@ redirect_from: /2018-01-23-How-To-Configure-Chroot-SFTP-Server-In-Linux/
 tag: [sftp, secure ftp, ssh ftp]
 ---
 
+* toc
+{:toc}
+
 ## Introduction
 SFTP stands for Secure File Transfer Protocol. One of the perfect way to upload and download files. Normal FTP is not that secure to transfer data as it has security vulnerabilities. SFTP doesn't need any additional package when we have openssh installed in our machine. If we have SSH credentials, they can also act as SFTP but that is not secure way to share with everyone as it provides access to all filesystem files. Some configuration tweaks in the `/etc/ssh/ssh_config` file can limited this access to specific directory called chroot access which will secure enough to accessible by public. This is exactly what we are going to demonstrate here.
 

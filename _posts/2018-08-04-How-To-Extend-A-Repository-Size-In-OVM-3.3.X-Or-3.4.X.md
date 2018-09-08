@@ -5,6 +5,9 @@ image: /images/ovmrepo.jpg
 tags: Oracle Virtualization Server
 ---
 
+* toc
+{:toc}
+
 > It is simple enough to extend the repository size in Oracle VM Manager, not through GUI though.
 
 To increase the size of an existing repository kindly follow following steps:
