@@ -9,6 +9,9 @@ redirect_from:
 tag: [Installation, Database]
 ---
 
+* toc
+{:toc}
+
 ### Intoduction
 Oracle Database Appliance or ODA is an Oracle Engineered System that is simple to deploy and optimized. Here, we have, ODA X6-2S. It is designed for customers requiring only single instance databases. The deployment shall take not more than around 35 minutes. This post includes full how-to-deploy video which is more than enough for the complete deployment knowledge.
 
