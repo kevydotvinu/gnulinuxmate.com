@@ -7,6 +7,9 @@ redirect_from: /2018-01-02-Iptables-A-Simple-Use-Case/
 share-img: /img/iptables.png
 ---
 
+* toc
+{:toc}
+
 ### Introduction
 Iptables is a user-space utility program that allows a system administrator to configure the tables provided by the Linux kernel firewall (implemented as different Netfilter modules) and the chains and rules it stores.
 
