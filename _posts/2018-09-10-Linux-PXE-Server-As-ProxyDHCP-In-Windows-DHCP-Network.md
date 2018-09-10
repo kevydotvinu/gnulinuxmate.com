@@ -12,7 +12,7 @@ tags: PXE Linux Network
 1. Install and configure PXE server on the network which already having Windows DHCP server.
 2. Boot Clonezilla via PXE network boot.
 
-### Basics of PXE, TFTP, proxy DHCP and DNSMASQ
+### Basics of PXE, TFTP, proxyDHCP and DNSMASQ
 
 ##### Preboot eXecution Environment (PXE)
 
