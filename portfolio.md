@@ -25,7 +25,7 @@ I enjoy writing <strong>useful & reusable bash scripts</strong> to make task eas
 
 <p class="portfolio-text">
 <span class="fa fa-users portfolio-icon"></span>
-I do not usually miss any technical event or gathering. However, I have had the good fortunate to be the part of:<br> <strong>Oracle Bare Metal DBCS Sales Play Workshop - Mumbai</strong><br> <strong>Google Cloud Partner Summit - Mumbai</strong><br> <strong>AWS Technical Essentials Day - Mumbai</strong><br> <strong> Red Hat Boot Camp - Mumbai </strong><br> <strong> AWS Technical Day 2018 - Mumbai </strong><br> <strong> AWS Summit 2018 - Mumbai </strong><br> <strong> Google Summit 2018 - Mumbai </strong><br>
+I do not usually miss any technical event or gathering. However, I have had the good fortunate to be the part of:<br><strong>Oracle Bare Metal DBCS Sales Play Workshop - Mumbai</strong><br><strong>Google Cloud Partner Summit - Mumbai</strong><br><strong>AWS Technical Essentials Day - Mumbai</strong><br><strong>Red Hat Boot Camp - Mumbai </strong><br><strong>AWS Technical Day 2018 - Mumbai</strong><br><strong>AWS Summit 2018 - Mumbai</strong><br><strong>Google Summit 2018 - Mumbai</strong><br><strong>Google Cloud OnBoard 2018 - Mumbai</strong><br>
 </p>
 
 <p class="portfolio-text">
