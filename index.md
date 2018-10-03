@@ -1,5 +1,6 @@
 ---
 layout: home
+title: gnulinuxmate
 ---
 # About Me
 
