@@ -9,20 +9,17 @@ image: /images/contact.jpg
 <!--contactme form-->
 <div id="contactme-section">
 <h1 id="contact">Write it down!</h1>
-<form action="https://formspree.io/kevy.vinu@gmail.com" method="POST" class="form" id="contact-form">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSeQRW8QpBogPB_cu9da3zlnudHStjCgT8xwFsYJ9TUWPp4TTw/formResponse" method="POST" class="form" id="contact-form">
   <p>You can also send me a quick message using the form below.</p>
   <div class="row">
     <div class="col-xs-6">
-      <input type="email" name="_replyto" class="form-control input-lg" placeholder="Your Email" title="Email">
+      <input type="email" name="entry.1045781291" class="form-control input-lg" placeholder="Your Email" title="Email">
     </div>
     <div class="col-xs-6">
-      <input type="text" name="name" class="form-control input-lg" placeholder="Your Name" title="Name">
+      <input type="text" name="entry.2005620554" class="form-control input-lg" placeholder="Your Name" title="Name" required="required">
     </div>
   </div>
-  <input type="hidden" name="_subject" value="New submission from linuxmate.ml">
-  <textarea type="text" name="content" class="form-control input-lg" placeholder="Message" title="Message" required="required" rows="3"></textarea>
-  <input type="text" name="_gotcha" style="display:none">
-  <input type="hidden" name="_next" value="./contact?message=Your message was sent successfully, thanks!" />
+  <textarea type="text" name="entry.839337160" class="form-control input-lg" placeholder="Message" title="Message" required="required" rows="3"></textarea>
 <br>
   <button type="submit" class="btn btn-lg btn-primary">Submit</button>
 </form>
