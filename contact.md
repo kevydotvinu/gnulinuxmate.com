@@ -7,9 +7,13 @@ image: /images/contact.jpg
 <link href="/assets/css/contact.css" rel="stylesheet"/>
 
 <!--contactme form-->
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+onload="if(submitted) {window.location='https://www.gnulinuxmate.com/thanks';}"></iframe>
+
 <div id="contactme-section">
 <h1 id="contact">Write it down!</h1>
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSeQRW8QpBogPB_cu9da3zlnudHStjCgT8xwFsYJ9TUWPp4TTw/formResponse" method="POST" class="form" id="contact-form">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSeQRW8QpBogPB_cu9da3zlnudHStjCgT8xwFsYJ9TUWPp4TTw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="form" id="contact-form">
   <p>You can also send me a quick message using the form below.</p>
   <div class="row">
     <div class="col-xs-6">
