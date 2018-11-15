@@ -35,6 +35,7 @@ layout: compress
       </a>
       <div class="inner-post content">
         <div class="date-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}&#x2756;{% endif %}</div>
+	{% include ad-one.html %}
         {{ content }}
         <br>
         {% include share.html %}
