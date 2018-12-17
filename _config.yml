@@ -26,7 +26,7 @@ sass:
   style:            compressed
 
 # Google Analytics
-#google-analytics: UA-109052826-1
+google-analytics: UA-131121845-1
 
 #disqus
 disqus: gnulinuxmate
