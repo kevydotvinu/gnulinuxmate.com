@@ -70,6 +70,40 @@ lsof -p <pid>
 strace -f -e open ls >/dev/null
 ```
 
+### Terminal
+#### Terminal shortcuts
+
+| Shortcut                                 | Function                         |
+| :--------------------------------------: | :------------------------------: |
+| <kbd>Ctrl</kbd>+<kbd>D</kbd>             | Exit                             |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd>             | SIGINT / Kill                    |
+| <kbd>Ctrl</kbd>+<kbd>Z</kbd>             | SIGSTP / Suspend                 |
+| <kbd>Ctrl</kbd>+<kbd>L</kbd>             | Clear Screen                     |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd>             | Jump to begining of line         |
+| <kbd>Ctrl</kbd>+<kbd>E</kbd>             | Jump to end of line              |
+| <kbd>Ctrl</kbd>+<kbd>U</kbd>             | Erase backward from cursor       |
+| <kbd>Ctrl</kbd>+<kbd>K</kbd>             | Erase forward from cursor        |
+| <kbd>Ctrl</kbd>+<kbd>W</kbd>             | Erase backward one word          |
+| <kbd>Ctrl</kbd>+<kbd>Y</kbd>             | Paste what erased above          |
+| <kbd>Ctrl</kbd>+<kbd>P</kbd>             | Previous command                 |
+| <kbd>Ctrl</kbd>+<kbd>N</kbd>             | Next command                     |
+| <kbd>Ctrl</kbd>+<kbd>R</kbd>             | History search                   |
+| <kbd>Tab</kbd>                           | Autocomplete command             |
+| <kbd>^</kbd>word<kbd>^</kbd>replacement  | Replace word in previous command |
+| <kbd>Esc</kbd>+<kbd>.</kbd>              | Paste previous argument          |
+
+#### VIM
+
+| Command                                  | Function                         |
+| :--------------------------------------: | :------------------------------: |
+| :set paste                               | Paste with proper indentation    |
+| :read !cat /etc/os-release               | Get output from command          |
+| :%s/pattern/replacement/g                | Replace everything with pattern  |
+| :set rnu                                 | Set relative line number         |
+| :set number                              | Set line number                  |
+| <kbd>"</kbd>+<kbd>+</kbd>+<kbd>y</kbd>   | Copy to clipboard                |
+| <kbd>"</kbd>+<kbd>+</kbd>+<kbd>p</kbd>   | Paste from clipboard             |
+
 ### Miscellaneous
 #### Share text/link via QR code
 ```bash
@@ -104,3 +138,5 @@ mpthree() {
 youtube-dl -f 140 "ytsearch:$1 $2 $3 $4 $5 $6 $7 $8 $9"
 }
 ```
+
+
