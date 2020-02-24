@@ -92,7 +92,7 @@ strace -f -e open ls >/dev/null
 | <kbd>^</kbd>word<kbd>^</kbd>replacement  | Replace word in previous command |
 | <kbd>Esc</kbd>+<kbd>.</kbd>              | Paste previous argument          |
 
-#### VIM
+#### Vim
 
 | Command                                  | Function                         |
 | :--------------------------------------: | :------------------------------: |
