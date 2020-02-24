@@ -152,7 +152,7 @@ canvas {
   }
 }
 
-.tips-menu-icon {
+.gists-menu-icon {
   position: absolute;
   top: 30px;
   right: 150px;
@@ -179,7 +179,7 @@ canvas {
 }
 
 .posts-link,
-.tips-link,
+.gists-link,
 .projects-link {
   position: absolute;
   top: 73px;
@@ -187,16 +187,16 @@ canvas {
   color: darken($white, 40);
 }
 
-.tips-link {
+.gists-link {
   right: 150px;
 }
 
 .posts-link {
-  right: 90px;
+  right: 87px;
 }
 
 .projects-link {
-  right: 20px;
+  right: 24px;
 }
 
 .overlay {
