@@ -101,8 +101,18 @@ strace -f -e open ls >/dev/null
 | :%s/pattern/replacement/g                | Replace everything with pattern  |
 | :set rnu                                 | Set relative line number         |
 | :set number                              | Set line number                  |
+| :set ff=dos                              | Save in dos format               |
+| :set ff=unix                             | Save in unix format              |
+| :w !sudo tee %                           | Save file with sudo              |
 | <kbd>"</kbd>+<kbd>+</kbd>+<kbd>y</kbd>   | Copy to clipboard                |
 | <kbd>"</kbd>+<kbd>+</kbd>+<kbd>p</kbd>   | Paste from clipboard             |
+
+#### Tmux
+
+| Command                                  | Function                         |
+| :--------------------------------------: | :------------------------------: |
+| :select-pane -P 'bg=red'                 | Set backgroud color red          |
+| :set-window-option synchronize-panes     | Synchronize panes                |
 
 ### Miscellaneous
 #### Share text/link via QR code
