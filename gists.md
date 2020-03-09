@@ -54,6 +54,38 @@ sudo socat -d -d  TUN:192.168.32.2/24,up SYSTEM:"ssh root@172.16.1.157 socat -d 
 sudo ip route change default via 192.168.32.1 dev eth0 scope global
 ```
 
+#### X11 Server
+```bash
+# Check port
+nmap -p6000 localhost
+
+# Check process arguments
+pgrep X | xargs ps -lfwwwp
+
+# Configure X - Edit `/etc/X11/xinit/xserverrc` and add/change:
+exec /usr/bin/X "$@"
+
+# Configure lightdm - Edit `/etc/lightdm/lightdm.conf` and add:
+[SeatDefaults]
+xserver-allow-tcp=true
+
+# Configure gdm - Edit `/etc/gdm/custom.conf` and add:
+[security]
+DisallowTCP=false
+
+# Grant X access
+xhost +<client IP>
+
+# Transfer cookie to client (Run from client)
+ssh <server> xauth extract - :0 | xauth merge -
+
+# Set display env variable to client
+export DISPLAY=<server>:0
+
+# Run X application from client
+xterm
+```
+
 ### Filesystem
 #### Find IO waits
 ```bash
