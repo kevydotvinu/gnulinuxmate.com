@@ -102,6 +102,115 @@ lsof -p <pid>
 strace -f -e open ls >/dev/null
 ```
 
+#### Collection of grub.cfg for Linux distribution ISOs
+```bash
+set timeout=10
+set default=0
+
+menuentry 'debian-9.0.0-i386-DVD-1.iso' {
+	set isofile='/ISO/debian-9.0.0-i386-DVD-1.iso'
+	loopback loop (hd1,msdos1)$isofile
+	linux (loop)/live/vmlinuz boot=live config fromiso=/ISO/$isofile
+	initrd (loop)/live/initrd.img
+}
+
+menuentry "ubuntu-14.04-LTS-desktop-i386.iso" {
+	loopback loop (hd0,msdos1)/ISO/ubuntu-14.04-LTS-desktop-i386.iso
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=/ISO/ubuntu-14.04-LTS-desktop-i386.iso splash --
+	initrd (loop)/casper/initrd.lz
+}
+
+menuentry "Android-4.3-x86" --class android {
+	set root='(hd0,msdos5)'
+	linux /android-4.3-x86/kernel quiet root=/dev/ram0 androidboot.hardware=tx2500 acpi_sleep=s3_bios,s3_mode SRC=/android-4.3-x86 vga=788
+	initrd /android-4.3-x86/initrd.img
+}
+
+menuentry "ubuntu-16.04.3-server-amd64.iso" {
+	loopback loop (hd0,msdos1)/ISO/ubuntu-16.04-LTS-minimal-amd64.iso
+	linux (loop)/install/vmlinuz iso-scan/filename=/ISO/ubuntu-16.04.3-server-amd64.iso splash --
+	initrd (loop)/install/initrd.gz
+}
+
+menuentry "Ubuntu-gnome-16.04-desktop-i386.iso" {
+	set isofile='/ubuntu-gnome-16.04-desktop-i386.iso'
+	loopback loop (hd0,msdos7)$isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile splash quiet --
+	initrd (loop)/casper/initrd.lz
+}
+
+menuentry 'archlinux-2016.05.01-dual.iso ' {
+	set isofile='/kevy/ISO/archlinux-2016.05.01-dual.iso'
+	loopback loop (hd0,msdos7)$isofile
+	linux (loop)/arch/boot/i686/vmlinuz archisodevice=/dev/loop0 img_dev=/dev/sda7 img_loop=$isofile earlymodules=loop splash quiet
+	initrd (loop)/arch/boot/i686/archiso.img
+}
+
+menuentry 'openSUSE-13.2-GNOME-Live-i686' {
+	set isofile='/kevy/ISO/openSUSE-13.2-GNOME-Live-i686.iso'
+	loopback loop (hd0,msdos7)$isofile
+	linux (loop)/boot/i386/loader/linux isofrom_device=/dev/sda7 isofrom_system=$isofile splash quiet
+	initrd (loop)/boot/i386/loader/initrd
+}
+
+menuentry "kali-linux-2016.1-i386.iso" {
+	set isofile='/kevy/ISO/kali-linux-2016.1-i386.iso'
+	loopback loop (hd0,msdos7)$isofile
+	linux (loop)/live/vmlinuz boot=live findiso=$isofile noconfig=sudo username=root hostname=kali splash quiet
+	initrd (loop)/live/initrd.img
+}
+
+menuentry "Windows" --class windows --class os {
+	set root=(hd0,1)
+	insmod part_msdos
+	insmod fat
+	insmod ntldr
+	ntldr /bootmgr
+}
+
+menuentry 'ArchLinux' {
+	set isofile='/boot/iso/archlinux-2017.04.01-x86_64.iso'
+	loopback loop $isofile
+	linux (loop)/arch/boot/x86_64/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
+	initrd (loop)/arch/boot/x86_64/archiso.img
+}
+
+menuentry "Android-x86" {
+	set root='(hdX,X)'
+	linux /android-4.4-RC2/kernel quiet root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.4-RC2S SDCARD=/data/sdcard.img
+	initrd /android-4.4-RC2/initrd.img  
+}
+
+menuetry "Fedora-NetBoot" {
+	set isofile='/boot/iso/Fedora.iso'
+	loopback loop $isofile
+	linux (loop)/isolinux/vmlinuz inst.stage2=hd:LABEL=Fedora-WS-dvd-x86_64-24 iso-scan/filename=$isofile quiet
+	initrd (loop)/isolinux/initrd.img
+}
+
+menuentry "Fedora-LiveCD" {
+	set isofile='/boot/iso/Fedora.iso'
+	loopback loop $isofile
+	linux (loop)/isolinux/vmlinuz root=live:CDLABEL=Fedora-WS-Live-24-1-2 iso-scan/filename=$isofile rd.live.image
+	initrd (loop)/isolinux/initrd.img
+}
+
+menuentry "ParrotSec Persistence" {
+	set isofile='/parrotSecv4u7x64.iso'
+	loopback loop (hd1,msdos1)$isofile
+	linux (loop)/live/vmlinuz boot=live findiso=$isofile hostname=parrot quiet splash components noautomount persistence
+	initrd (loop)/live/initrd.img
+}
+
+menuentry "HDD Boot" {
+	exit
+}
+
+menuentry "Shutdown" {
+	halt
+}
+```
+
 ### Terminal
 #### Terminal shortcuts
 
@@ -180,5 +289,3 @@ mpthree() {
 youtube-dl -f 140 "ytsearch:$1 $2 $3 $4 $5 $6 $7 $8 $9"
 }
 ```
-
-
