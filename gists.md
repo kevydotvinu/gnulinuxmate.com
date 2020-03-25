@@ -86,6 +86,60 @@ export DISPLAY=<server>:0
 xterm
 ```
 
+#### Wifi Access Point
+```bash
+# Environment variables and directories
+mkdir -p $HOME/.local/bin $HOME/.local/etc
+echo $PATH | grep "/home/`whoami`/.local/bin" || export PATH=$PATH:$HOME/.local/bin
+
+# DNSMASQ configuration
+cat << EOF > $HOME/.local/etc/dnsmasq.conf
+bind-interfaces
+server=8.8.8.8
+dhcp-range=192.168.9.50,192.168.9.150,255.255.255.0,12h
+EOF
+
+# HOSTAPD configuration
+cat << EOF > $HOME/.local/etc/hostapd.conf
+driver=nl80211
+ssid=<SSID>
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=<PASSWORD>
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+EOF
+
+# Access point script
+cat << EOF > $HOME/.local/bin/hotspot
+#!/bin/bash
+IFACE=$1
+sudo ip link set $IFACE down
+sudo ip addr flush $IFACE
+sudo ip addr add 192.168.9.1/24 dev $IFACE
+sudo ip link set $IFACE up
+sudo nmcli device set $IFACE managed no
+sudo killall dnsmasq > /dev/null 2>&1
+sleep 3s
+sudo dnsmasq -i $IFACE -I lo -C $HOME/.local/etc/dnsmasq.conf
+sudo killall hostapd > /dev/null 2>&1
+sleep 3s
+sudo hostapd -i $IFACE -B $HOME/.local/etc/hostapd.conf > /dev/null 2>&1
+sudo iptables -F -t nat
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward > /dev/null 2>&1
+EOF
+
+# Start access point
+hotspot wlan0
+```
+
 ### Filesystem
 #### Find IO waits
 ```bash
