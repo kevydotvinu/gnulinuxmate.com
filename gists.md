@@ -100,7 +100,7 @@ server=8.8.8.8
 dhcp-range=192.168.9.50,192.168.9.150,255.255.255.0,12h
 EOF
 
-# HOSTAPD configuration
+# HOSTAPD configuration - Choose SSID and PASSWORD
 cat << EOF > $HOME/.local/etc/hostapd.conf
 driver=nl80211
 ssid=<SSID>
