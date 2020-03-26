@@ -121,24 +121,48 @@ EOF
 cat << EOF > $HOME/.local/bin/hotspot
 #!/bin/bash
 IFACE=$1
-sudo ip link set $IFACE down
-sudo ip addr flush $IFACE
-sudo ip addr add 192.168.9.1/24 dev $IFACE
-sudo ip link set $IFACE up
-sudo nmcli device set $IFACE managed no
-sudo killall dnsmasq > /dev/null 2>&1
-sleep 3s
-sudo dnsmasq -i $IFACE -I lo -C $HOME/.local/etc/dnsmasq.conf
-sudo killall hostapd > /dev/null 2>&1
-sleep 3s
-sudo hostapd -i $IFACE -B $HOME/.local/etc/hostapd.conf > /dev/null 2>&1
-sudo iptables -F -t nat
-sudo iptables -t nat -A POSTROUTING -j MASQUERADE
-echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward > /dev/null 2>&1
+OPERATION=$2
+case $OPERATION in
+	start)
+		sudo ip link set $IFACE down
+		sudo ip addr flush $IFACE
+		sudo ip addr add 192.168.9.1/24 dev $IFACE
+		sudo ip link set $IFACE up
+		sudo nmcli device set $IFACE managed no
+		sudo killall dnsmasq > /dev/null 2>&1
+		sleep 3s
+		sudo dnsmasq -i $IFACE -I lo -C $HOME/.local/etc/dnsmasq.conf
+		sudo killall hostapd > /dev/null 2>&1
+		sleep 3s
+		sudo hostapd -i $IFACE -B $HOME/.local/etc/hostapd.conf
+		sudo iptables -t nat -D POSTROUTING -j MASQUERADE > /dev/null 2>&1
+		sudo iptables -t nat -A POSTROUTING -j MASQUERADE
+		echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward > /dev/null 2>&1
+		;;
+	stop)
+		sudo ip addr flush $IFACE
+		sudo nmcli device set $IFACE managed yes
+		sudo killall dnsmasq > /dev/null 2>&1
+		sudo killall hostapd > /dev/null 2>&1
+		sudo iptables -t nat -D POSTROUTING -j MASQUERADE > /dev/null 2>&1
+		echo 0 | sudo tee /proc/sys/net/ipv4/ip_forward > /dev/null 2>&1
+		;;
+	status)
+		ps -eo cmd | grep "\-[i] $IFACE" || \
+			echo "hotspot is stopped"
+		;;
+	*)
+		echo "USAGE: hotspot <interface name> <start|stop|status>"
+		echo "EXAMPLE: hostapd wlan0 start"
+		;;
+esac
 EOF
 
 # Start access point
-hotspot wlan0
+hotspot wlan0 start
+
+# Stop access point
+hotspot wlan0 stop
 ```
 
 ### Filesystem
