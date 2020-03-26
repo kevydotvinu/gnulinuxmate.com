@@ -88,9 +88,10 @@ xterm
 
 #### Wifi Access Point
 ```bash
-# Environment variables and directories
+# Packages, directories and environment variable
+sudo apt install hostapd dnsmasq
 mkdir -p $HOME/.local/bin $HOME/.local/etc
-echo $PATH | grep "/home/`whoami`/.local/bin" || export PATH=$PATH:$HOME/.local/bin
+printenv | grep "/home/`whoami`/.local/bin" > /dev/null 2>&1 || echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc && bash
 
 # DNSMASQ configuration
 cat << EOF > $HOME/.local/etc/dnsmasq.conf
