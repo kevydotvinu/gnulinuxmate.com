@@ -65,6 +65,8 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    sassc (2.3.0)
+      ffi (~> 1.9)
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
@@ -78,6 +80,7 @@ DEPENDENCIES
   jekyll-gist
   jekyll-redirect-from
   jekyll-sitemap
+  sassc
 
 BUNDLED WITH
-   1.16.6
+   2.1.4
