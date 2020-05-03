@@ -3,7 +3,7 @@ layout: post
 date: 2017-02-04 08:40am
 share-img: /img/chat.png
 subtitle: Command-line-interface tool
-title: Best IRC Client
+title: Command line IRC Client
 image: /images/uploads/home.png
 description: A very small ntroduction to a terminal based IRC client - irssi.
 tags: commandline irc cli irssi
