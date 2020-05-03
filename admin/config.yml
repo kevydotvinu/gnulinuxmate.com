@@ -22,7 +22,7 @@ collections:
       - {label: "Images", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown", required: true}
       - {label: "SEO description", name: "description", widget: "text", required: true}
-      - {label: "SEO tags", name: "tags", widget: "list", required: true}
+      - {label: "SEO tags (space delimiter)", name: "tags", widget: "string", required: true}
 #   card: {type: "image", image: "image", text: "title", required: true}
   - name: "pages"
     label: "Pages"
