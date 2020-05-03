@@ -16,11 +16,11 @@ collections:
     create: true
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Category", name: "category", widget: "hidden", default: "linux"}
+      - {label: "Category", name: "category", widget: "hidden", default: "posts"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma", required: true}
       - {label: "Images", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown", required: true}
       - {label: "SEO description", name: "description", widget: "text", required: true}
-      - {label: "SEO tags", name: "tags", widget: "list", default: ["linux"]}
-    card: {type: "image", image: "image", text: "title", required: true}
+      - {label: "SEO tags", name: "tags", widget: "text", required: true}
+#    card: {type: "image", image: "image", text: "title", required: true}
