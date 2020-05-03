@@ -21,7 +21,6 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma", required: true}
       - {label: "Images", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown", required: true}
-#      - {label: "SEO tag", name: "tags", widget: "text", required: true}
       - {label: "SEO description", name: "description", widget: "text", required: true}
       - {label: "SEO tags", name: "tags", widget: "select", multiple: true, create: true, required: true}
     card: {type: "image", image: "image", text: "title", required: true}
