@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: kevydotvinu/kevydotvinu.github.io
+  branch: netlifycms
+  base_url: https://netlifycms-kevy.herokuapp.com
+
+media_folder: "images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog"
+    folder: "_posts"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Category", name: "category", widget: "hidden", default: "linux"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma", required: true}
+      - {label: "Images", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+      - {label: "SEO tag", name: "tags", widget: "text", required: true}
+      - {label: "SEO description", name: "description", widget: "text", required: true}
+    card: {type: "image", image: "image", text: "title", required: true}
