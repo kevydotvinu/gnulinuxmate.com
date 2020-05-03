@@ -6,6 +6,8 @@ backend:
 
 media_folder: "images/uploads"
 
+publish_mode: editorial_workflow
+
 collections:
   - name: "posts"
     label: "Blog"
