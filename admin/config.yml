@@ -22,5 +22,5 @@ collections:
       - {label: "Images", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown", required: true}
       - {label: "SEO description", name: "description", widget: "text", required: true}
-      - {label: "SEO tags", name: "tags", widget: "select", options: ["linux", "terminal"], multiple: true, create: true, required: true}
+      - {label: "SEO tags", name: "tags", widget: "list", default: ["linux"]
     card: {type: "image", image: "image", text: "title", required: true}
