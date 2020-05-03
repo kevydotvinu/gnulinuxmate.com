@@ -23,4 +23,23 @@ collections:
       - {label: "Body", name: "body", widget: "markdown", required: true}
       - {label: "SEO description", name: "description", widget: "text", required: true}
       - {label: "SEO tags (space-delimiter)", name: "tags", widget: "string", required: true}
-#    card: {type: "image", image: "image", text: "title", required: true}
+#   card: {type: "image", image: "image", text: "title", required: true}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Gists"
+        name: "gists"
+        file: "gists.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "gists"}
+          - {label: "Image", name: "image", widget: "image", required: false, tagname: ""}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Profile"
+        name: "profile"
+        file: "profile.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "porfolio"}
+          - {label: "Image", name: "image", widget: "image", required: false, tagname: ""}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
