@@ -1,9 +1,12 @@
 ---
 layout: post
 title: Install GRUB On USB Drive
-subtitle: Boot-up any computer with a single USB drive
+date: 2017-07-12 08:58pm
 image: /images/grub.jpg
-tags: [Commandline]
+share-img: /images/uploads/usb.png
+excerpt: Install GRUB on USB and keep it as a tool to repair PC.
+subtitle: Boot-up any computer with a single USB drive
+tags: cli commandline grub livecd
 ---
 If we are having GRUB installed on our USB drive, live CD booting will be easier from ISO files. Here assuming ``/dev/sda1`` is your device.
 
