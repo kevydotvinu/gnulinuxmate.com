@@ -7,6 +7,8 @@ image: /images/uploads/home.png
 description: A step-by-step instructions to facilitate Netlifycms on GitHub Pages.
 tags: Netlifycms GitHub Jekyll OpenShift CMS
 ---
+* toc {:toc}
+
 #### Why do we need CMS for Jekyll?
 
 [Jekyll](https://jekyllrb.com/) is an awesome static site generator. However, in terms of content management workflow, it is not that simple enough and we need a fully fledged CMS like [Netlifycms](https://www.netlifycms.org/).
