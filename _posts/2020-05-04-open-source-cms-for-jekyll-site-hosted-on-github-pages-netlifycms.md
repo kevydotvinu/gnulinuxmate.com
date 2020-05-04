@@ -7,8 +7,7 @@ image: /images/uploads/home.png
 description: A step-by-step instructions to facilitate Netlifycms on GitHub Pages.
 tags: Netlifycms GitHub Jekyll OpenShift CMS
 ---
-* toc
-{:toc}
+* toc {:toc}
 
 ### Why do we need CMS for Jekyll?
 
@@ -51,11 +50,13 @@ ORIGIN=www.yoursiteurl.com
 EOF
 oc new-app .
 oc status
-oc create secret githuboauth --from-literal=OAUTH_CLIENT_ID=f432a9casdff1e4b79c57 --from-literal=OAUTH_CLIENT_SECRET=pampadympapampadympapampadympa
+export OAUTH_CLIENT_ID=<GitHub client ID>
+export OAUTH_CLIENT_SECRET=<GitHub client secret>
+oc create secret githuboauth --from-literal=OAUTH_CLIENT_ID=${OAUTH_CLIENT_ID} --from-literal=OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET}
 oc set env --from=secret/githuboauth dc/netlify-cms-github-oauth-provider
 oc patch svc/netlify-cms-github-oauth-provider -p '{"spec":{"ports":[{"name":"3000-tcp","port":3000,"protocol": "TCP","targetPort": 3000}]}}'
 oc create route edge --service netlify-cms-github-oauth-provider
-oc get route                   <-- this gives Netlifycms application url
+oc get route
 ```
 
 #### Create changes in Jekyll site
@@ -87,7 +88,7 @@ backend:
   name: github
   repo: <your github repo> Ex: username/repo
   branch: <repo branch> Ex: master
-  base_url: <Netliyfy application url we created above> Ex: https://netlify-cms-github-oauth-provider-netlifycms.apps.uk-east-3.starter.openshift-online.com
+  base_url: <url from oc get route command> Ex: https://netlify-cms-github-oauth-provider-netlifycms.apps.uk-east-3.starter.openshift-online.com
 
 media_folder: "images/uploads"
 
