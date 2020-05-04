@@ -7,12 +7,7 @@ share-img: /images/uploads/rdp.png
 excerpt: An easy way of accessing Linux machine with Windows remote desktop
   connection application.
 subtitle: Very convenient for Windows users
-tags:
-  - Linux
-  - Ubuntu
-  - Windows
-  - RDP
-  - VNC
+tags: Linux Ubuntu Windows RDP VNC
 ---
 
 * toc
