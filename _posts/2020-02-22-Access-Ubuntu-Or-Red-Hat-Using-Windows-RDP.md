@@ -1,9 +1,18 @@
 ---
-title: Access Ubuntu or Red Hat using Windows RDP
-subtitle: Very convenient for Windows users
-image: /images/home.png
 layout: post
-tags: [ Linux, Ubuntu, Windows, RDP, VNC ]
+title: Access Ubuntu or Red Hat using Windows RDP
+date: 2020-02-22 07:39pm
+image: /images/home.png
+share-img: /images/uploads/rdp.png
+excerpt: An easy way of accessing Linux machine with Windows remote desktop
+  connection application.
+subtitle: Very convenient for Windows users
+tags:
+  - Linux
+  - Ubuntu
+  - Windows
+  - RDP
+  - VNC
 ---
 
 * toc
