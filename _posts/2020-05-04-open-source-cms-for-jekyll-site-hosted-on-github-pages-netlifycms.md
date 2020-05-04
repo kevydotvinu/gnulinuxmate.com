@@ -7,7 +7,8 @@ image: /images/uploads/home.png
 description: A step-by-step instructions to facilitate Netlifycms on GitHub Pages.
 tags: Netlifycms GitHub Jekyll OpenShift CMS
 ---
-* toc {:toc}
+* toc
+{:toc}
 
 ### Why do we need CMS for Jekyll?
 
