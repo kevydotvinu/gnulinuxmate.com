@@ -19,7 +19,8 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "posts"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma", required: true}
-      - {label: "Images", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Share Image", name: "share image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown", required: true}
       - {label: "SEO description", name: "description", widget: "text", required: true}
       - {label: "SEO tags (space delimiter)", name: "tags", widget: "string", required: true}
