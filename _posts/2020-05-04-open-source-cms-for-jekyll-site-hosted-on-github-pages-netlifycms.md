@@ -5,7 +5,7 @@ title: Open source CMS for Jekyll site hosted on GitHub Pages - Netlifycms
 date: 2020-05-04 09:49am
 image: /images/uploads/home.png
 share-img: /images/uploads/jekyll.jpg
-description: A step-by-step instructions to facilitate Netlifycms on GitHub Pages.
+excerpt: A perfect and easy CMS solution for Jekyll site hosted on GitHub Pages.
 tags: Netlifycms GitHub Jekyll OpenShift CMS
 ---
 * toc
