@@ -3,7 +3,7 @@ layout: post
 category: posts
 title: Open source CMS for Jekyll site hosted on GitHub Pages - Netlifycms
 date: 2020-05-04 09:49am
-image: ""
+image: /images/uploads/home.png
 description: A step-by-step instructions to facilitate Netlifycms on GitHub Pages.
 tags: Netlifycms GitHub Jekyll OpenShift CMS
 ---
@@ -103,6 +103,6 @@ collections:
 EOF
 ```
 
-Please refer [this](https://www.netlifycms.org/docs/add-to-your-site/) to configure the above for your need.
+Please make changes on config.yml file as per your values and refer [this](https://www.netlifycms.org/docs/add-to-your-site/) for more information.
 
 This is it! Now you can visit https://yousiteurl.com/admin/index.html to authenticate and see your Netlifycms console.
