@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Access Ubuntu or Red Hat using Windows RDP
-date: 2020-05-04 07:39pm
+date: 2020-02-22 07:39pm
 image: /images/home.png
 share-img: /images/uploads/rdp.png
 excerpt: An easy way of accessing Linux machine with Windows remote desktop
