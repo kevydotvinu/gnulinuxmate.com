@@ -1,10 +1,13 @@
 ---
 layout: post
-title: Iptables - A simple use case
-subtitle: A very little knowledge of iptables can replace your expensive home router
-image: /images/iptables.jpg
 redirect_from: /2018-01-02-Iptables-A-Simple-Use-Case/
+date: 2018-01-02 08:28pm
 share-img: /img/iptables.png
+subtitle: A very little knowledge of iptables can replace your expensive home router
+title: Iptables - A simple use case
+image: /images/iptables.jpg
+description: An introduction to iptables configurations.
+tags: network linux iptables firewall
 ---
 
 * toc
