@@ -39,7 +39,7 @@ Go and create OAuth app from GitHub account from [here](https://github.com/setti
 
 First create a free OpenShift account from [here](https://www.openshift.com/products/online/) and try below commands.
 
-```
+```shell
 # clone github repository
 git clone https://github.com/vencax/netlify-cms-github-oauth-provider
 cd netlify-cms-github-oauth-provider
@@ -64,7 +64,7 @@ oc get route
 
 In your Jekyll site root directory, create two files as follows:
 
-```
+```shell
 admin
  ├ index.html
  └ config.yml
