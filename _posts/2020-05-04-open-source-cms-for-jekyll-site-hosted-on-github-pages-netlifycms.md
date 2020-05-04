@@ -9,11 +9,11 @@ tags: Netlifycms GitHub Jekyll OpenShift CMS
 ---
 * toc {:toc}
 
-#### Why do we need CMS for Jekyll?
+### Why do we need CMS for Jekyll?
 
 [Jekyll](https://jekyllrb.com/) is an awesome static site generator. However, in terms of content management workflow, it is not that simple enough and we need a fully fledged CMS like [Netlifycms](https://www.netlifycms.org/).
 
-#### What are the options in Netlifycms?
+### What are the options in Netlifycms?
 
 We have two options to deploy Netlifycms:
 
@@ -22,19 +22,19 @@ We have two options to deploy Netlifycms:
 
 First one is straight forward and you can find the instructions in [here](https://www.netlify.com/blog/2016/10/27/a-step-by-step-guide-deploying-a-static-site-or-single-page-app/). In this post we demonstrate the second option in detail. For external OAuth, we can use [](https://www.heroku.com/)[Heroku](https://www.heroku.com/) or [OpenShift](https://www.openshift.com/products/online/) platform to deploy [](https://nodejs.org/)[Netlifycms OAuth](https://www.netlifycms.org/docs/external-oauth-clients/) code for free (Free quota is enough for this code). Please watch [this](https://www.youtube.com/watch?reload=9&v=Xv2ZW-QPAFc) video for Heroku application as we prefer OpenShift in here.
 
-#### Why do we need GitHub Pages when we have free Netlify hosting + CMS?
+### Why do we need GitHub Pages when we have free Netlify hosting + CMS?
 
 We will not get fine-grained control over the site. It is easy to make changes to the site itself when we are hosting on [GitHub Pages](https://pages.github.com/).
 
-#### How to facilitate your own OAuth authentication?
+### How to facilitate your own OAuth authentication?
 
 On Netlifycms page, there are some [community-maintained projects](https://www.netlifycms.org/docs/external-oauth-clients/) for this. We prefer [this](https://github.com/vencax/netlify-cms-github-oauth-provider) Node.js code here.
 
-##### Create OAuth authentication app in GitHub
+#### Create OAuth authentication app in GitHub
 
 Go and create OAuth app from GitHub account from [here](https://github.com/settings/developers) and make it ready your client ID and client secret.
 
-##### Create Netlifycms authentication app on OpenShift
+#### Create Netlifycms authentication app on OpenShift
 
 First create a free OpenShift account from [here](https://www.openshift.com/products/online/) and try below commands.
 
@@ -57,7 +57,7 @@ oc create route edge --service netlify-cms-github-oauth-provider
 oc get route                   <-- this gives Netlifycms application url
 ```
 
-##### Create changes in Jekyll site
+#### Create changes in Jekyll site
 
 In your Jekyll site root directory, create two files as follows:
 
