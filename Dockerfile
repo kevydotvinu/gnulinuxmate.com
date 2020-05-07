@@ -12,7 +12,7 @@ COPY . ${BLOG_DIR}
 
 RUN chown -R 1000:0 ${BLOG_DIR} \
     && chmod -R ugo=rwX ${BLOG_DIR} \
-    cd ${BLOG_DIR} \
+    && cd ${BLOG_DIR} \
     && bundler install
 
 VOLUME ${BLOG_DIR}
