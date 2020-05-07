@@ -23,4 +23,4 @@ EXPOSE 4000
 
 USER 1000
 
-CMD bundle exec jekyll serve -H 0.0.0.0 -s ${BLOG_DIR} -d ${JEKYLL_DIR}/_site
+CMD bundle exec jekyll serve -H 0.0.0.0 -s ${BLOG_DIR} -d ${JEKYLL_DATA_DIR}/_site
