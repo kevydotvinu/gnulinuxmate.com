@@ -1,6 +1,6 @@
 FROM jekyll/jekyll:3.8
 
-ENV BLOG_DIR=/srv/jekyll
+ENV BLOG_DIR=/home/jekyll/blog
 ENV JEKYLL_ENV=production
 
 LABEL io.k8s.description="Base image for Ubuntu based Jekyll" \
@@ -10,9 +10,9 @@ LABEL io.k8s.description="Base image for Ubuntu based Jekyll" \
 
 COPY . ${BLOG_DIR}
 
-#   chown -R 1000:0 ${BLOG_DIR} \
-#   && chmod -R ugo=rwX ${BLOG_DIR} \
-RUN cd ${BLOG_DIR} \
+RUN chown -R 1000:0 ${BLOG_DIR} \
+    && chmod -R ugo=rwX ${BLOG_DIR} \
+    cd ${BLOG_DIR} \
     && bundler install
 
 VOLUME ${BLOG_DIR}
@@ -23,4 +23,4 @@ EXPOSE 4000
 
 USER 1000
 
-CMD bundle exec jekyll serve -H 0.0.0.0 -s ${BLOG_DIR} -d ${BLOG_DIR}/_site
+CMD bundle exec jekyll serve -H 0.0.0.0 -s ${BLOG_DIR} -d ${JEKYLL_DIR}/_site
