@@ -1,6 +1,7 @@
 FROM jekyll/jekyll:3.8
 
-ENV BLOG_DIR=/home/jekyll/blog
+ENV BLOG_DIR=/srv/jekyll
+ENV JEKYLL_ENV=production
 
 LABEL io.k8s.description="Base image for Ubuntu based Jekyll" \
       io.k8s.display-name="OpenShift Jekyll" \
@@ -10,6 +11,7 @@ LABEL io.k8s.description="Base image for Ubuntu based Jekyll" \
 COPY . ${BLOG_DIR}
 
 RUN chown -R 1000:0 ${BLOG_DIR} \
+    && chmod -R ugo=rwX ${BLOG_DIR} \
     && cd ${BLOG_DIR} \
     && bundler install
 
