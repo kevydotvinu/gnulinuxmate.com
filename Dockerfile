@@ -1,6 +1,6 @@
 FROM jekyll/jekyll:3.8
 
-ENV HOME=/home/jekyll
+ENV HOME=/srv/jekyll
 
 LABEL io.k8s.description="Base image for Ubuntu based Jekyll" \
       io.k8s.display-name="OpenShift Jekyll" \
