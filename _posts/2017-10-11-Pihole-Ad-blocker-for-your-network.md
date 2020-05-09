@@ -2,7 +2,7 @@
 title: Pihole - Adblocker for your network
 layout: post
 subtitle: Give it a try and make your home network ad-free and faster
-image: /images/pihole.jpg
+image: /images/uploads/home.jpg
 tag: [Command-line]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: DIY Router With Ubuntu 14.04 LTS
 subtitle: Perfect replacement for ready-made router if you do have unused computer
-image: /img/router.png
+image: /images/uploads/home.jpg
 share-img: /img/router.png
 ---
 I have been using Ubuntu as my base machine for the past some years. Things have been learning from day to day since then. Recently, my thoughts have crossed the internals of routers and which turned out to be the idea of Ubuntu as a router. You would be wondering why do we need Ubuntu as a router when we have ready-made one? Assume that, we are living in a town like Mumbai where ISP provide DSL connections to the whole apartment through a switch installed on the top of it. In that case, we don't have to pay for router or something when we get connected like plugged in directly to the PC or laptop. This scenario makes to think "Linux as a router" if you love and explore the possibilities of Linux. All we have to need is two LAN card or in my case, second one is WLAN as a Wireless Access Point. Wireless Access Point provide internet as well as IP address from the configured DHCP server which I have installed in my machine. Following are the needful.

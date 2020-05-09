@@ -1,7 +1,7 @@
 ---
 layout: contact
 title: Contact
-image: /images/contact.jpg
+image: /images/home.jpg
 ---
 
 <link href="/assets/css/contact.css" rel="stylesheet"/>

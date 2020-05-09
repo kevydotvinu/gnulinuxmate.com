@@ -5,7 +5,7 @@ date: 2018-01-02 08:28pm
 share-img: /img/iptables.png
 subtitle: A very little knowledge of iptables can replace your expensive home router
 title: Iptables - A simple use case
-image: /images/iptables.jpg
+image: /images/uploads/home.jpg
 description: An introduction to iptables configurations.
 tags: network linux iptables firewall
 ---

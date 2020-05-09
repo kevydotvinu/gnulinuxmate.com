@@ -2,7 +2,7 @@
 title: VIM Tricks
 layout: post
 subtitle: Tricks which apart from usual-googled-results
-image: /images/vim.jpg
+image: /images/uploads/home.jpg
 tags: [Terminal, Commands]
 ---
 

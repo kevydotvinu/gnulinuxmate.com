@@ -1,6 +1,6 @@
 ---
 title: Boot installation media and persistent Ubuntu OS from PXE Server
-image: /images/boot.jpg
+image: /images/uploads/home.jpg
 layout: post
 tags: PXE Linux Network Ubuntu Windows
 ---

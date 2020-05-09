@@ -3,7 +3,7 @@ layout: post
 title: Pandoc - Simple Text to PDF Conversion
 subtitle: Think about converting a simple text-file to mail-ready PDF document
 tags: [Tools, Commands]
-image: /images/pandoc.jpg
+image: /images/uploads/home.jpg
 ---
 
 **Although we do have rich-text editors, we do not really need those, which comes heavy, to write a simple letter and save it as PDF file. Moreover, some people like to work in terminal to make their work distraction-free (Yes, The complete Game of Thrones book was written with VIM text editor). Here, I am using VIM and PANDOC to do that job.**  

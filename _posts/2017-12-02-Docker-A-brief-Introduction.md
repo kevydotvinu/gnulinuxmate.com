@@ -3,7 +3,7 @@ title: Docker - A brief introduction
 layout: post
 subtitle: Perfect tool for multi platform users
 description: How to use docker?
-image: /images/docker.jpg
+image: /images/uploads/home.jpg
 redirect_from: /2017-12-02-Docker-A-brief-Introduction/
 tag: [application, docker, linux docker, docker commands]
 ---

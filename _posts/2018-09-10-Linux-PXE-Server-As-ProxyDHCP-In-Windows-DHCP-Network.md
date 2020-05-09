@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux PXE server as ProxyDHCP in Windows DHCP network"
-image: /images/pxecover.jpg
+image: /images/uploads/home.jpg
 tags: PXE Linux Network
 ---
 

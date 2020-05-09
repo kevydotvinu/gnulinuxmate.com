@@ -2,7 +2,7 @@
 layout: post
 title: Linux Magazine Download Script
 subtitle: Linux magazines are the good source of Linux knowledge
-image: /img/magazine.png
+image: /images/uploads/home.jpg
 share-img: /img/magazine.png
 ---
 Since I have got Linux fever I have been searching for the all kind of Linux knowledge sources and found out that magazines are good sources of unheard things. As it turns out, I have made one script which quite small in lines but download all latest and previous issues of MagPi as well as Linux Voice magazines. Append below mentioned lines to `bashrc` file would run the script flawlessly.

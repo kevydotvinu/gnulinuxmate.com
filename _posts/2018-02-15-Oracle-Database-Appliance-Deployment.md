@@ -2,7 +2,7 @@
 layout: post
 title: Oracle Database Appliance Deployment
 subtitle: A complete video demonstration
-image: /images/oracle.jpg
+image: /images/uploads/home.jpg
 redirect_from: 
  - /Oracle-Database-Appliance-Deployment/
  - /2018-02-15-Oracle-Database-Appliance-Deployment/

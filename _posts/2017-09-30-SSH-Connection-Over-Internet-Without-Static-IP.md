@@ -3,7 +3,7 @@ layout: post
 title: SSH Connection Over Internet Without Static IP
 subtitle: Perfect choice for IoT projects
 tags: [Debian]
-image: /images/ssh.jpg
+image: /images/uploads/home.jpg
 ---
 
 **If you do have some Raspberry Pi projects, you should have probably tried ssh (Secure Shell). Most of all the Raspberry Pi projects are rely on the ssh remote connection. Wouldn't it be super beneficial if we could use the ssh connection through internet without any static IP and other router configuration headaches?**

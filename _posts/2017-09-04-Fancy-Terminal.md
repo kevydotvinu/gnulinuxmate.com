@@ -2,7 +2,7 @@
 layout: post
 title: Fancy Terminal
 subtitle: Movie-like terminal to get people's attention
-image: /images/terminal.jpg
+image: /images/uploads/home.jpg
 tags: [Commandline]
 ---
 All Hacker's movies have one thing in common which attract us the most is computer terminal that feeds continuous text. Here, I have a simple script that resembles those fancies a very little.

@@ -4,7 +4,7 @@ date: 2017-03-02 02:04pm
 share-img: /img/script.png
 subtitle: Very useful if you are a die-hard CLI user
 title: Useful tiny Bash functions
-image: /images/uploads/home.png
+image: /images/uploads/home.jpg
 description: A collection of useful bash functions which makes some terminal task easier.
 tags: linux cli bash terminal shell
 ---

@@ -1,7 +1,7 @@
 ---
 title: Experience with i3 window manager
 date: 2017-04-03 04:16pm
-image: /images/uploads/home.png
+image: /images/uploads/home.jpg
 description: My experience with I3 window manager.
 tags: linux desktop-environment window-manager
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: Install GRUB On USB Drive
 date: 2017-07-12 08:58pm
-image: /images/grub.jpg
+image: /images/uploads/home.jpg
 share-img: /images/uploads/usb.png
 excerpt: Install GRUB on USB and keep it as a tool to repair PC.
 subtitle: Boot-up any computer with a single USB drive

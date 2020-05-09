@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How To Extend A Repository Size In OVM 3.3.X / 3.4.X"
-image: /images/ovmrepo.jpg 
+image: /images/uploads/home.jpg
 tags: Oracle Virtualization Server
 ---
 
