@@ -2,29 +2,41 @@
 layout: gists
 title: Terminal Thoughts
 ---
-
 * toc
 {:toc}
 
-**Note:** In all commands below, you can ignore `sudo` if you are using `root`.
-{: .notice}
+**Note:** In all commands below, you can ignore `sudo` if you are using `root`. {: .notice}
 
-### Docker
+### Container
+
 #### Remove all docker containers
+
 ```bash
 sudo docker rm $(docker -aq)
 ```
+
 #### Upload local docker image to minikube
+
 ```bash
 sudo docker save node/web:v1 | pv | (eval $(minikube docker-env) && docker load)
 ```
 
+#### List listening ports without any tools
+
+```
+for i in $(cat /proc/net/tcp | awk 'NR>1 {print $2}' | cut -d":" -f2 | xargs); do echo $((16#${i})); done | grep -vE '[0-9]{5}' | sort -u
+```
+
 ### Network
+
 #### Change default route
+
 ```bash
 sudo ip route change default via <IP> scope global dev eth0
 ```
+
 #### SSH VPN from office to home
+
 ```bash
 OFFICE=127.0.0.1
 HOME=127.0.0.1
@@ -34,7 +46,9 @@ ssh -D 9999 HOME -p 2222
 ssh -o "ProxyCommand nc -x HOME:9999 %h %p" root@ANYOFFICESERVER
 chromium-browser --incognito --proxy-server="socks://HOME:9999"
 ```
+
 #### SSH X11 Minimal
+
 ```bash
 sudo yum install xorg-x11-xauth xorg-x11-font-Type1
 
@@ -46,7 +60,9 @@ EOF
 
 X11UseLocalhost no (Ubuntu)
 ```
+
 #### Enable internet in offline server
+
 ```bash
 # From desktop
 sudo socat -d -d  TUN:192.168.32.2/24,up SYSTEM:"ssh root@172.16.1.157 socat -d -d - 'TUN:192.168.32.1/24,up'"
@@ -55,6 +71,7 @@ sudo ip route change default via 192.168.32.1 dev eth0 scope global
 ```
 
 #### X11 Server
+
 ```bash
 # Check port
 nmap -p6000 localhost
@@ -87,6 +104,7 @@ xterm
 ```
 
 #### Wifi Access Point
+
 ```bash
 # Packages, directories and environment variable
 sudo apt install hostapd dnsmasq
@@ -166,7 +184,9 @@ hotspot wlan0 stop
 ```
 
 ### Filesystem
+
 #### Find IO waits
+
 ```bash
 for x in `seq 1 1 10`; do ps -eo state,pid,cmd | grep "^D";
 echo "----";
@@ -176,12 +196,15 @@ done
 cat /proc/<pid>/io
 lsof -p <pid>
 ```
+
 #### Find open syscall
+
 ```bash
 strace -f -e open ls >/dev/null
 ```
 
 #### Collection of grub.cfg for Linux distribution ISOs
+
 ```bash
 set timeout=10
 set default=0
@@ -291,55 +314,60 @@ menuentry "Shutdown" {
 ```
 
 ### Terminal
+
 #### Terminal shortcuts
 
-| Shortcut                                 | Function                         |
-| :--------------------------------------: | :------------------------------: |
-| <kbd>Ctrl</kbd>+<kbd>D</kbd>             | Exit                             |
-| <kbd>Ctrl</kbd>+<kbd>C</kbd>             | SIGINT / Kill                    |
-| <kbd>Ctrl</kbd>+<kbd>Z</kbd>             | SIGSTP / Suspend                 |
-| <kbd>Ctrl</kbd>+<kbd>L</kbd>             | Clear Screen                     |
-| <kbd>Ctrl</kbd>+<kbd>A</kbd>             | Jump to begining of line         |
-| <kbd>Ctrl</kbd>+<kbd>E</kbd>             | Jump to end of line              |
-| <kbd>Ctrl</kbd>+<kbd>U</kbd>             | Erase backward from cursor       |
-| <kbd>Ctrl</kbd>+<kbd>K</kbd>             | Erase forward from cursor        |
-| <kbd>Ctrl</kbd>+<kbd>W</kbd>             | Erase backward one word          |
-| <kbd>Ctrl</kbd>+<kbd>Y</kbd>             | Paste what erased above          |
-| <kbd>Ctrl</kbd>+<kbd>P</kbd>             | Previous command                 |
-| <kbd>Ctrl</kbd>+<kbd>N</kbd>             | Next command                     |
-| <kbd>Ctrl</kbd>+<kbd>R</kbd>             | History search                   |
-| <kbd>Tab</kbd>                           | Autocomplete command             |
-| <kbd>^</kbd>word<kbd>^</kbd>replacement  | Replace word in previous command |
-| <kbd>Esc</kbd>+<kbd>.</kbd>              | Paste previous argument          |
+| Shortcut                                | Function                         |
+| --------------------------------------- | -------------------------------- |
+| <kbd>Ctrl</kbd>+<kbd>D</kbd>            | Exit                             |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd>            | SIGINT / Kill                    |
+| <kbd>Ctrl</kbd>+<kbd>Z</kbd>            | SIGSTP / Suspend                 |
+| <kbd>Ctrl</kbd>+<kbd>L</kbd>            | Clear Screen                     |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd>            | Jump to begining of line         |
+| <kbd>Ctrl</kbd>+<kbd>E</kbd>            | Jump to end of line              |
+| <kbd>Ctrl</kbd>+<kbd>U</kbd>            | Erase backward from cursor       |
+| <kbd>Ctrl</kbd>+<kbd>K</kbd>            | Erase forward from cursor        |
+| <kbd>Ctrl</kbd>+<kbd>W</kbd>            | Erase backward one word          |
+| <kbd>Ctrl</kbd>+<kbd>Y</kbd>            | Paste what erased above          |
+| <kbd>Ctrl</kbd>+<kbd>P</kbd>            | Previous command                 |
+| <kbd>Ctrl</kbd>+<kbd>N</kbd>            | Next command                     |
+| <kbd>Ctrl</kbd>+<kbd>R</kbd>            | History search                   |
+| <kbd>Tab</kbd>                          | Autocomplete command             |
+| <kbd>^</kbd>word<kbd>^</kbd>replacement | Replace word in previous command |
+| <kbd>Esc</kbd>+<kbd>.</kbd>             | Paste previous argument          |
 
 #### Vim
 
-| Command                                  | Function                         |
-| :--------------------------------------: | :------------------------------: |
-| :set paste                               | Paste with proper indentation    |
-| :read !cat /etc/os-release               | Get output from command          |
-| :%s/pattern/replacement/g                | Replace everything with pattern  |
-| :set rnu                                 | Set relative line number         |
-| :set number                              | Set line number                  |
-| :set ff=dos                              | Save in dos format               |
-| :set ff=unix                             | Save in unix format              |
-| :w !sudo tee %                           | Save file with sudo              |
-| <kbd>"</kbd>+<kbd>+</kbd>+<kbd>y</kbd>   | Copy to clipboard                |
-| <kbd>"</kbd>+<kbd>+</kbd>+<kbd>p</kbd>   | Paste from clipboard             |
+| Command                                | Function                        |
+| -------------------------------------- | ------------------------------- |
+| :set paste                             | Paste with proper indentation   |
+| :read !cat /etc/os-release             | Get output from command         |
+| :%s/pattern/replacement/g              | Replace everything with pattern |
+| :set rnu                               | Set relative line number        |
+| :set number                            | Set line number                 |
+| :set ff=dos                            | Save in dos format              |
+| :set ff=unix                           | Save in unix format             |
+| :w !sudo tee %                         | Save file with sudo             |
+| <kbd>"</kbd>+<kbd>+</kbd>+<kbd>y</kbd> | Copy to clipboard               |
+| <kbd>"</kbd>+<kbd>+</kbd>+<kbd>p</kbd> | Paste from clipboard            |
 
 #### Tmux
 
-| Command                                  | Function                         |
-| :--------------------------------------: | :------------------------------: |
-| :select-pane -P 'bg=red'                 | Set backgroud color red          |
-| :set-window-option synchronize-panes     | Synchronize panes                |
+| Command                              | Function                |
+| ------------------------------------ | ----------------------- |
+| :select-pane -P 'bg=red'             | Set backgroud color red |
+| :set-window-option synchronize-panes | Synchronize panes       |
 
 ### Miscellaneous
+
 #### Share text/link via QR code
+
 ```bash
 qrencode -o /tmp/mkqr.png "$(xsel -p)" && feh /tmp/mkqr.png
 ```
+
 #### Free time learning
+
 ```bash
 fetch {
 while [ 0 ]; 
@@ -351,7 +379,9 @@ sleep 1s
 done
 }
 ```
+
 #### Update only newly added repository
+
 ```bash
 update-repo() {
     for source in "$@"; do
@@ -360,7 +390,9 @@ update-repo() {
     done
 }
 ```
+
 #### Download any mp3 song from YouTube
+
 ```bash
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
