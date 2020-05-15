@@ -5,7 +5,8 @@ title: Terminal Thoughts
 * toc
 {:toc}
 
-**Note:** In all commands below, you can ignore `sudo` if you are using `root`. {: .notice}
+**Note:** In all commands below, you can ignore `sudo` if you are using `root`.
+{: .notice}
 
 ### Container
 
