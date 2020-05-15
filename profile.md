@@ -8,7 +8,7 @@ title: Vinu K
 
 <p class="portfolio-text">
 <span class="fa fa-briefcase portfolio-icon"></span>
-I am currently a <strong>Linux Professional</strong> and passionately walking in the track of <strong>OpenStack</strong>. Previously, I worked as an <strong>Electrical Engineer</strong> (then, why Linux? I had a vision, so to speak) in start-up.
+I am currently a <strong>Linux Professional</strong> and passionately walking in the track of <strong>OpenShift</strong>. Previously, I worked as an <strong>Electrical Engineer</strong> (then, why Linux? I had a vision, so to speak) in start-up.
 </p>
 
 <p class="portfolio-text">
