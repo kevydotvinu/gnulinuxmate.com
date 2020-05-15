@@ -33,18 +33,12 @@ collections:
         file: "gists.md"
         fields:
           - {label: "Layout", name: "layout", widget: "hidden", default: "gists"}
-          - {label: "Image", name: "image", widget: "image", required: false, tagname: ""}
-          - {label: "Share Image", name: "share-img", widget: "image", required: true, tagname: ""}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "SEO description", name: "excerpt", widget: "text", required: true}
+          - {label: "Title", name: "title", widget: "hidden", default: "Terminal Thoughts"}
           - {label: "Body", name: "body", widget: "markdown"}
       - label: "Profile"
         name: "profile"
         file: "profile.md"
         fields:
           - {label: "Layout", name: "layout", widget: "hidden", default: "porfolio"}
-          - {label: "Image", name: "image", widget: "image", required: false, tagname: ""}
-          - {label: "Share Image", name: "share-img", widget: "image", required: true, tagname: ""}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "SEO description", name: "excerpt", widget: "text", required: true}
+          - {label: "Title", name: "title", widget: "hidden", default: "Vinu K"}
           - {label: "Body", name: "body", widget: "markdown"}

@@ -1,8 +1,6 @@
 ---
 layout: portfolio
 title: Vinu K
-subtitle: "An avid fan of Linux and open-source enthusiast"
-image: /images/home.jpg
 ---
 
 <link href="/assets/css/portfolio.css" rel="stylesheet"/>
