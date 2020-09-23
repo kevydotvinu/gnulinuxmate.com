@@ -4,7 +4,7 @@ https://keybase.io/kevydotvinu
 
 I hereby claim:
 
-  * I am an admin of https://linuxmate.ml
+  * I am an admin of https://gnulinuxmate.com
   * I am kevydotvinu (https://keybase.io/kevydotvinu) on keybase.
   * I have a public key with fingerprint 14D8 B939 7A8F 10DA 44B0  0FE3 B5CC F2B7 D917 627C
 
@@ -21,17 +21,27 @@ To do so, I am signing this object:
       "uid": "a2e0c756d0f5701436fcc1895b897219",
       "username": "kevydotvinu"
     },
+    "merkle_root": {
+      "ctime": 1600876774,
+      "hash_meta": "95975b6ed19f2d5ea8dd2f27bb6f90918ea91a702777c984bf86601f11e5c277",
+      "seqno": 17648765
+    },
+    "revoke": {
+      "sig_ids": [
+        "af2500acb34dd348514abd55c8a786e14587c6aecf2c8f6de8de7b5bf16392fa0f"
+      ]
+    },
     "service": {
-      "hostname": "linuxmate.ml",
+      "hostname": "gnulinuxmate.com",
       "protocol": "https:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1516176856,
+  "ctime": 1600876777,
   "expire_in": 157680000,
-  "prev": "09d56dbc2b8d8087d4b5ccbb956c07c279d8f221d90f30483e5417825cb09344",
-  "seqno": 53,
+  "prev": "a399bf42421377c2e95ec28986a04036ec8b7616669d6b16b1d7d27a34304f8e",
+  "seqno": 62,
   "tag": "signature"
 }
 
@@ -39,29 +49,32 @@ which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
 
-owGtUmtQVGUY3l2kvCKX1DLpx3EGR1jp3C+LxaiFTKNgKlEOw3bO+b4DB5bdZffs
-CsJu5MhAqczSlMGUwyUvZRPdYGNgmCE0JFAuFoQhactMRICtlsolonMY+9fPvj/f
-fO/7PM/3vM+8vjUhOoO+6crdr65vEIr1PROC7pA59OciRLCBQsRUhOTCpQtaAHQq
-5lwZICYExVAM0iSgKEEkCIYALI0yKCsSGMNKgJZ4hqEZluAAL+AczpAEjjI4ymEE
-LWEChjMCjaMojxgRSbZmQYfdIVsVVRYjAStwBMfwrIShgCdJAUUlSAiUKEq4wAAO
-Y2icEVVits2pMVRzAu+E8bJNrakP85K9/8D/z75dS3I8DlGRoWiAShSDYqQKE0WM
-5SiB5Rgc4zSgEzqsfB5c8uouBDbFLVtdiMeIqA23LEItW22YhyCL2i3I4xUYn2dR
-6XaHTbGJNovayVYUu9OkMZVCuwY9DAXzQxGzIFuBGqXKcEOHU7ZZEROmIkVF1lQx
-CqPVJFiKNiKwwC47oFnWEJRaQ9Wj/QPdWj4coDJoIIi4wAIWZRlAalkKAkfRIsqI
-OMMBVsJxDHCoRKAkS0CKVLPDKVFAOYIkEW2ufKsNMVGEapTPUkWdcpaVV1wOiHhW
-vmHYtEynN+geCTVoW6ZbuSL839Vz4GsXs+m01QuZ/g/H+ze9vW36Xk1staXcF3z5
-0/Cb18FvUSbL3knfnqc7As3nX08sNZQMrd8WRdyZa7dXZCC6jJLIkz3m4Pubt6RW
-h86YKp6rvtR2ecI4b2+IHJyaL72YmNZ95vfjhUa5eezA2PSqx2LSj8bdaUb630v+
-wXCwvmRD9uzwM2lhnZ99ESh+8Rd/yt9PuONS5Oi/Bttivx/YWfH1/L5Pdg5cDfYm
-V524H5YRcDf5Rg6dqq1/c/mPl9+a9M8Mncg9MzHrDXsqBI68NhaXaxme/tzjyf+z
-Mz+48XS3LiXyXAQfaIsPXOjIHPb/mvBx0sjy0WM54QnP5315t0t/HDwp1R4uGw+2
-7OKP1F3KyWzkJkPvHQtb1bGxuKH8Ss2NWjDuLnhnf/9aGBERmf/qaNmjGe1699mU
-1Y0xw1xQGfvmXNvU9pnuD0rWb29bXFP54NsWL/lTYu01eHToNlXW5N2xL/2PQUtW
-zoPbyCnvQutgKg/3Pxuy6P+oK6U0OW4INuyOLren9fbtuNbfHrt3M9k4GvtKS3Kl
-nmk+WL+ndyqgJNx6POqqYaGlqGD+YqN7WfOuF5JONkbmGs9WFd1YdEX7PK5b7/a1
-1oFOa/ncnNdXl5iU8F33ff/YVq9Hcs2e72mdm6y7eSA5vSa1KmfrS+6FdStmXEcG
-LgQKSzxdw+tO16bH9FVuoVL/AQ==
-=E7ME
+owGtk39MVlUYx0EtwCBtCbWWMq7OXxGdc3+ccy7m1ML5s/IHrUbqu3PuPRdeeXnv
+y3svL7yiGZYirKVmE2a9LqagDErCVGgOnFEJWKmlmRlqmkujFNnUGc7Oy3RtrT+7
+u9vdfc73eZ7P8z3nbEwaGhMfu/fI9f0/PsZWxnZfZjGe/MBfpRKzzbCUWSrl88EP
+95nccT35XlPKlAAEkCPV1DRmKApWTIIABsRQICaWiSyKMcJE0U3KZF3GqiIDLAMd
+KsiCDMqYIRkAKqVLltefy4OBoNfvirJQNQnTFR1TYkFgUlVlAFhcYZphWDLDpg4x
+krEhEvNsJ5oh4Bh1eIbXFjHx4xnE+w/9/8xdNFiOyhwYWEMmsDQMoCpkhgGJrjGi
+YxnqUaHDg35awAdZQ2HTdkNef5G0Kl0q4MF8H/cEbduN+mu43qgKIgCIgMCqmJE6
+eZ4C7lKRrGs61hjiJtQt2dQ4JaYpW4KIIUsXhIRTHVIMZIyxoROVWQQhAC0IuWaI
+oEBxeKHfFh0wUkUHTSAEecjO59HujjdXWOdIma9JB1dTS9bEmAZTVNNUVKJBlTLh
+mUEoJohDVSPYQJQLjw1iIZMTk2OmMQsiRZctCixp6apov2DIawyWj+7WPRdy/UU+
+4UBJAXV5hmEXCLBA0HZtw/aJ1TzXDTiZUXvccCAqL+bMc6+Qh3n9pjgvIiPEg47X
+9othhPLfzuF0iZcEvEHu8UYVGkYEiCfah4eiu6boOrNUWZWhIsySua5xQyY6QRSo
+QEHcIAwjiBDSTcSgeE1sypgqqgJUi/B/rESy4KS5oqbwz0/doiCXVg2vGKIMi4mN
+jxmdkjZs1KlWfcWGkaezmkZcuH/HHhgSvWAxwxNG3o/sf2vEwEO/9GgL14ytmNz7
+SAa6UfUgGXcT/7512/nWRdqV/eWF1o67196f+N54R4tb1lrrNnxxbc/WHXkNhy5u
+Gb02dfKEvI5jOfWb+9Ql8ybuvjM7J66tMvRKRc/VWZvXwK4ldT0Ldhejkr7O6SfK
+n2ob2xhX/5XTndq0JrvmWNq4bPTBomn9xQ8PLb5eO4rVFR+bOiJtoLZucykK5AQ3
+bCpv2Fu79qekrNSu2f1vq7eTN1am9vrWf1k3bz6sHvbxgrn9L26jA1tOfqP+3K0H
+suYHdzQkv1N/ftm3Z3vdSHJfpPrlqvCZM5+d6Dm379NnO7ri1peVlFdnXHihs3NM
+8yftjRFgTl2Y6GwrW+4tHLMrpeDr/gP5heqe5c+MeVqe3EK3tO/bk7x95/jFNWlv
+viRNP93RaJ5srs32zfie1r/a15ie+FzCldKDV8Og/fVefci6ws6aivQjFzOv3P18
+U1XivCbH6ThqpZ6KYNQ8q6VV21nUdrs9tlJJOVp3aziQyNzDoD9nXCRcc+7JdSlw
+TvahP/tx8YctUx/9dULCyMNJa88mhCNLu2hZYvzlC9s/OpfyfNMTC9+trkya0bk6
+h1ikW5rSd2PWwJzFZSUH4+NWnl8xp89unnL8h6yb3ykt036rvOT742SV67n1hn1p
+Fxt6fOekw3WPT4pbuUlxV7SxU9OWxkfkmYvy6g/cyTkeSAgl/A0=
+=q6FB
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -70,4 +83,3 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/kevydotvinu
 
 ==================================================================
-
