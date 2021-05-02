@@ -12,6 +12,9 @@ excerpt: Openshift internal registry allows you to push images to or pull them
 tags: openshift kubernetes registry image-registry docker docker-registry skopeo
   podman oc openshift-image-registry ocr
 ---
+* toc
+{:toc}
+
 ### Prepare registry infomation
 ```bash
 # Expose OpenShift v3 registry URL
