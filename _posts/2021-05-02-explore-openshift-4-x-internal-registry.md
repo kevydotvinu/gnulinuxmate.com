@@ -1,7 +1,7 @@
 ---
 layout: post
 category: posts
-title: How do I use OpenShift 4.x internal registry?
+title: How do I use OpenShift internal registry?
 date: 2021-05-02 03:48pm
 share-img: /images/uploads/openshift.png
 excerpt: Openshift internal registry allows you to push images to or pull them
