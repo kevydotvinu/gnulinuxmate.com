@@ -77,3 +77,97 @@ $ skopeo copy docker://registry.redhat.io/openshift4/ose-must-gather:latest dock
 $ skopeo copy docker-archive:$(pwd)/ose-must-gather.tar containers-storage:registry.redhat.io/openshift4/ose-must-gather:latest
 $ crictl images | grep ose-must-gather
 ```
+### Registry for disconnected OpenShift
+```bash
+$ sudo mkdir -p /opt/registry/{auth,certs,data}
+$ sudo chown -R $USER /opt/registry
+$ sudo wget --quiet https://github.com/cloudflare/cfssl/releases/download/v1.5.0/cfssljson_1.5.0_linux_amd64 -O /usr/local/bin/cfssljson
+$ sudo wget --quiet https://github.com/cloudflare/cfssl/releases/download/v1.5.0/cfssl_1.5.0_linux_amd64 -O /usr/local/bin/cfssl
+$ sudo chmod 755 /usr/local/bin/cfssl /usr/local/bin/cfssljson
+$ cfssl version ; cfssljson --version
+$ cd /opt/registry/certs
+$ cat << EOF > ca-config.json
+{
+  "signing": {
+    "default": {
+      "expiry": "87600h"
+    },
+    "profiles": {
+      "server": {
+        "expiry": "87600h",
+        "usages": [
+          "signing",
+          "key encipherment",
+          "server auth"
+        ]
+      },
+      "client": {
+        "expiry": "87600h",
+        "usages": [
+          "signing",
+          "key encipherment",
+          "client auth"
+        ]
+      }
+    }
+  }
+}
+EOF
+$ cat << EOF > ca-csr.json
+{
+  "CN": "Foo Bar",
+  "hosts": [
+    "foo.example.com"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "IN",
+      "ST": "Maharashtra",
+      "L": "Mumbai",
+      "OU": "Foo"
+    }
+  ]
+}
+EOF
+$ cat << EOF > server.json
+{
+  "CN": "Foo Bar",
+  "hosts": [
+    "foo.example.com"
+  ],
+  "key": {
+    "algo": "ecdsa",
+    "size": 256
+  },
+  "names": [
+    {
+      "C": "IN",
+      "ST": "Maharashtra",
+      "L": "Mumbai",
+      "OU": "Foo"
+    }
+  ]
+}
+EOF
+$ cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
+$ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=server server.json | cfssljson -bare server
+$ htpasswd -bBc /opt/registry/auth/htpasswd openshift redhat
+$ podman run -d --name mirror-registry \
+  -p 5000:5000 --restart=always \
+  -v /opt/registry/data:/var/lib/registry:z \
+  -v /opt/registry/auth:/auth:z \
+  -e "REGISTRY_AUTH=htpasswd" \
+  -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+  -e "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd" \
+  -v /opt/registry/certs:/certs:z \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/server.pem \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/server-key.pem \
+  docker.io/library/registry:2
+$ sudo cp /opt/registry/certs/ca.pem /etc/pki/ca-trust/source/anchors
+$ sudo update-ca-trust extract
+$ curl -u openshift:redhat https://foo.example.com:5000/v2/_catalog
+```
