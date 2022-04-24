@@ -1,0 +1,31 @@
+name: Update all the gems to the latest versions
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+jobs:
+  update-gems:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Ruby and other prerequisites
+        run: |
+          apt-get install -y ruby-full build-essential zlib1g-dev
+          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+          source ~/.bashrc
+          gem install jekyll bundler
+      - name: Update gems
+        run: |
+          bundle update
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: update all the gems to the latst version
+          title: Update gems
+          body: |
+            Execute `bundle update` and update all the gems to the latest versions.
+          labels: dependencies, automated-pr, update
+          branch: gems-updates
+          delete-branch: true
