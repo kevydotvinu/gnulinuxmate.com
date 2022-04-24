@@ -28,6 +28,6 @@ jobs:
           title: Update gems
           body: |
             Execute `bundle update` and update all the gems to the latest versions.
-          labels: dependencies, automated-pr, update
+          labels: dependencies, automated pr, update
           branch: gems-updates
           delete-branch: true
