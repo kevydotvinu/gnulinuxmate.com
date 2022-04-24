@@ -23,7 +23,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: update all the gems to the latst version
+          commit-message: Update all the gems to the latst version
           title: Update gems
           body: |
             Execute `bundle update` and update all the gems to the latest versions.
