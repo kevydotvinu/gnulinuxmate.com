@@ -18,6 +18,7 @@ jobs:
           source ~/.bashrc
           echo $GEM_HOME
           gem install jekyll bundler
+        shell: bash
       - name: Update gems
         run: |
           bundle update
