@@ -1,8 +1,7 @@
 name: Update all the gems to the latest versions
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '0 0 * * *'      
 jobs:
   update-gems:
     runs-on: ubuntu-latest
