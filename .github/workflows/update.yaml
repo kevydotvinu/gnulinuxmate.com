@@ -19,6 +19,12 @@ jobs:
           export GEM_HOME="$HOME/gems"
           export PATH="$HOME/gems/bin:$PATH"
           bundle update
+      - name: Test changes
+        run: |
+          export GEM_HOME="$HOME/gems"
+          export PATH="$HOME/gems/bin:$PATH"
+          bundle exec jekyll build
+          bundle exec jekyll doctor
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
