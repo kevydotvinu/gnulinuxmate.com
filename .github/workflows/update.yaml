@@ -25,6 +25,7 @@ jobs:
           export PATH="$HOME/gems/bin:$PATH"
           bundle exec jekyll build
           bundle exec jekyll doctor
+          rm -rf .jekyll-cache
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
