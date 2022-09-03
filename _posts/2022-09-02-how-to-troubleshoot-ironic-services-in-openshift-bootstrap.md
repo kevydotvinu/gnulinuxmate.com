@@ -4,7 +4,7 @@ category: posts
 title: How to troubleshoot ironic services in OpenShift bootstrap node?
 date: 2022-09-02 11:00pm
 share-img: /images/uploads/openshift.png
-excerpt: A quick introduction to how to troubleshoot an ironic service in an OpenShift bootstrap node
+excerpt: A quick introduction to how to troubleshoot an ironic service in an OpenShift bootstrap node.
 tags: openshift ocp ocp4 ironic bootstrap metal3 ocp-node ocp-ipi-baremetal ipi-baremetal baremetal-operator ocp-baremetal
 ---
 * toc
