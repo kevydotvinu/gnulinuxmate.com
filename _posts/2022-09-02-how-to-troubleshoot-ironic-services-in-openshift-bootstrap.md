@@ -1,7 +1,7 @@
 ---
 layout: post
 category: posts
-title: How to troubleshoot ironic services in OpenShift bootstrap node
+title: How to troubleshoot ironic services in OpenShift bootstrap node?
 date: 2022-09-02 11:00pm
 share-img: /images/uploads/openshift.png
 excerpt: A quick introduction to how to troubleshoot an ironic service in an OpenShift bootstrap node
