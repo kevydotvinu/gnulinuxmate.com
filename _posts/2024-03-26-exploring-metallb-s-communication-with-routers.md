@@ -43,7 +43,7 @@ onp sno4
     AsciinemaPlayer.create(
       '/assets/cast/sno4.cast',
       document.getElementById('sno4'),
-      { cols: 147, rows: 30, controls: true}
+      { cols: 147, rows: 30, controls: true, theme: 'gruvbox' }
     );
   </script>
 </body>
@@ -197,7 +197,7 @@ exit
     AsciinemaPlayer.create(
       '/assets/cast/vyos.cast',
       document.getElementById('vyos'),
-      { cols: 174, rows: 30, controls: true }
+      { cols: 174, rows: 30, controls: true, theme: 'gruvbox' }
     );
   </script>
 </body>
