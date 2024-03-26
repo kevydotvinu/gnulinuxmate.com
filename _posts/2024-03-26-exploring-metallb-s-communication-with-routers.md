@@ -101,10 +101,9 @@ metadata:
   namespace: metallb-system
   name: onp-bgp-peer
 spec:
-  peerAddress: 192.168.126.2
+  peerAddress: 192.168.126.3
   peerASN: 64512
   myASN: 64512
-  holdTime: 5
 ---
 apiVersion: metallb.io/v1beta1
 kind: BGPAdvertisement
