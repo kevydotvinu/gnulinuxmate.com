@@ -32,6 +32,23 @@ Let's create our SNO cluster.
 ```
 onp sno4
 ```
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/css/asciinema-player.css" />
+</head>
+<body>
+  <div id="player"></div>
+  <script src="/assets/js/asciinema-player.min.js"></script>
+  <script>
+    AsciinemaPlayer.create(
+      '/assets/cast/sno4.cast',
+      document.getElementById('player'),
+      { cols: 147, rows: 30 }
+    );
+  </script>
+</body>
+</html>
+<br>
 Install and configure MetalLB.
 ```
 cat << EOF | oc create -f -

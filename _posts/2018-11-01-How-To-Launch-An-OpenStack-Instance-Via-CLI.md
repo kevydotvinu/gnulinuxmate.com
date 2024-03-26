@@ -89,6 +89,6 @@ openstack server create --image Ubuntu --key-name Key1 --flavor tiny --nic net-i
 </head>
 <body>
   <asciinema-player src="/cast/openstack.cast" speed="1" theme="asciinema" poster="data:text/plain,\e[1;37mHow to \e[1;33mlaunch \e[1;37man instance" cols="110" rows="22"></asciinema-player>
-  <script src="/assets/js/asciinema-player.js"></script>
+  <script src="/assets/js/asciinema-player.min.js"></script>
 </body>
 </html>
