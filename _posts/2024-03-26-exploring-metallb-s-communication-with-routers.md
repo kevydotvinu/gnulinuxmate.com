@@ -37,13 +37,13 @@ onp sno4
   <link rel="stylesheet" type="text/css" href="/assets/css/asciinema-player.css" />
 </head>
 <body>
-  <div id="player"></div>
+  <div id="sno4"></div>
   <script src="/assets/js/asciinema-player.min.js"></script>
   <script>
     AsciinemaPlayer.create(
       '/assets/cast/sno4.cast',
-      document.getElementById('player'),
-      { cols: 147, rows: 30 }
+      document.getElementById('sno4'),
+      { cols: 147, rows: 30, controls: true}
     );
   </script>
 </body>
@@ -186,7 +186,22 @@ commit
 save
 exit
 ```
-
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/css/asciinema-player.css" />
+</head>
+<body>
+  <div id="vyos"></div>
+  <script src="/assets/js/asciinema-player.min.js"></script>
+  <script>
+    AsciinemaPlayer.create(
+      '/assets/cast/vyos.cast',
+      document.getElementById('vyos'),
+      { cols: 174, rows: 30, controls: true }
+    );
+  </script>
+</body>
+</html>
 ### What are the flows of communication between the MetalLB and a router?
 
 The MetalLB communicates to the external router using the FRR container in speaker Pod. The speaker Pod uses the host-network of the node. By default, the connection initiates via the 179/TCP port. The FRR container has six states while connecting the peer. Those are Idle, Connect, Active, OpenSent, OpenConfirm and Established. We will see each ones in detail.
