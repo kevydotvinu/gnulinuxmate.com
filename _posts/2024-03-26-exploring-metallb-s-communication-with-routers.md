@@ -168,7 +168,23 @@ spec:
   type: LoadBalancer
 EOF
 ```
-
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/css/asciinema-player.css" />
+</head>
+<body>
+  <div id="metallb"></div>
+  <script src="/assets/js/asciinema-player.min.js"></script>
+  <script>
+    AsciinemaPlayer.create(
+      '/assets/cast/metallb.cast',
+      document.getElementById('metallb'),
+      { cols: 174, rows: 30, controls: true, theme: 'gruvbox' }
+    );
+  </script>
+</body>
+</html>
+<br>
 Next, install and configure VyOS. The NETWORK option is used for the bridge selection. Use the username and password as `vyos` when it prompts for the first configuration.
 ```
 onp vyos NETWORK=sno0
