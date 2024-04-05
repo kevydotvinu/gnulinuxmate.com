@@ -37,3 +37,4 @@ jobs:
           labels: dependencies, automated pr, update
           branch: gems-updates
           delete-branch: true
+          force: true
